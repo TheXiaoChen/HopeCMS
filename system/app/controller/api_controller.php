@@ -1,0 +1,451 @@
+<?php
+/**
+ * Hope CMS(希望CMS) Rest API controller
+ * @author LinZiChen <271106735@qq.com>
+ * @link http://www.hopecms.cn
+ * @copyright 2027 Hope CMS All rights reserved.
+ * @license http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+class Api_Controller {
+
+    /**
+     * @var Log_Model
+     */
+    public $Log_Model;
+    /**
+     * @var Twitter_Model
+     */
+    public $Twitter_Model;
+    /**
+     * @var Tag_Model
+     */
+    public $Tag_Model;
+    /**
+     * @var User_Model
+     */
+    public $User_Model;
+    /**
+     * @var Upload_Model
+     */
+    public $Upload_Model;
+    /**
+     * @var Comment_Model
+     */
+    public $Comment_Model;
+
+    public $Cache;
+    public $authReqSign;
+    public $authReqTime;
+    public $curUserInfo;
+    public $curUid;
+
+    function starter($params) {
+        $_func = addslashes($_GET['rest-api'] ?? '');
+        if (empty($_func)) {
+            Output::error('error router');
+        }
+
+        if (in_array($_func, ['pay_notify', 'pay_create', 'pay_cashier', 'pay_status', 'apply_purchase', 'hope_remote_upgrade'], true)) {
+            if ($_func === 'hope_remote_upgrade') {
+                require_once HOPE_ROOT . 'system/lib/upgrade_helper.php';
+                hope_handle_remote_upgrade();
+                return;
+            }
+            $Pay_Controller = new Pay_Controller();
+            $Pay_Controller->starter($params);
+            return;
+        }
+
+        hope_api_rate_limit_check();
+
+        if (Option::get('is_openapi') === 'n') {
+            Output::error('api is closed');
+        }
+
+        if (method_exists($this, $_func)) {
+            $this->Log_Model = new Log_Model();
+            $this->Tag_Model = new Tag_Model();
+            $this->Twitter_Model = new Twitter_Model();
+            $this->User_Model = new User_Model();
+            $this->Upload_Model = new Upload_Model();
+            $this->Comment_Model = new Comment_Model();
+            $this->Cache = Cache::getInstance();
+            $this->$_func();
+        } else {
+            Output::error('api method is not exist');
+        }
+    }
+
+    private function article_post() {
+        $title = Input::postStrVar('title');
+        $content = Input::postStrVar('content');
+        $excerpt = Input::postStrVar('excerpt');
+        $author_uid = Input::postIntVar('author_uid', 1);
+        $post_date = Input::postStrVar('post_date');
+        $sort_id = Input::postIntVar('sort_id', -1);
+        $tags = strip_tags(Input::postStrVar('tags'));
+        $cover = Input::postStrVar('cover');
+        $draft = Input::postStrVar('draft', 'n');
+        $alias = Input::postStrVar('alias');
+        $top = Input::postStrVar('top', 'n');
+        $sortop = Input::postStrVar('sortop', 'n');
+        $allow_remark = Input::postStrVar('allow_remark', 'n');
+        $password = Input::postStrVar('password');
+        $template = Input::postStrVar('template');
+
+        $this->auth();
+
+        if (empty($title) || empty($content)) {
+            Output::error('parameter error');
+        }
+
+        $sta_cache = $this->Cache->readCache('sta');
+        /*
+        if (!Register::isBound() && $sta_cache['lognum'] > 50) {
+            Output::error(html_entity_decode("&#x672A;&#x6CE8;&#x518C;&#x7684;&#x7248;&#x672C;", ENT_COMPAT, 'UTF-8'));
+        }*/
+
+        if ($this->curUid) {
+            $author_uid = $this->curUid;
+        }
+
+        $logData = [
+            'title'        => $title,
+            'content'      => $content,
+            'excerpt'      => $excerpt,
+            'author'       => $author_uid,
+            'sortid'       => $sort_id,
+            'cover'        => $cover,
+            'date'         => strtotime($post_date ?: date('Y-m-d H:i:s')),
+            'hide'         => $draft === 'y' ? 'y' : 'n',
+            'alias'        => $alias,
+            'top '         => $top,
+            'sortop '      => $sortop,
+            'allow_remark' => $allow_remark,
+            'password'     => $password,
+            'template'     => $template,
+        ];
+
+        $article_id = $this->Log_Model->addlog($logData);
+        $this->Tag_Model->addTag($tags, $article_id);
+        $this->Cache->updateCache();
+
+        doAction('save_log', $article_id, '', $logData);
+
+        output::ok(['article_id' => $article_id,]);
+    }
+
+    private function article_update() {
+        $id = Input::postIntVar('id');
+        $title = Input::postStrVar('title');
+        $content = Input::postStrVar('content');
+        $excerpt = Input::postStrVar('excerpt');
+        $post_date = trim($_POST['post_date'] ?? '');
+        $sort_id = Input::postIntVar('sort_id', -1);
+        $cover = Input::postStrVar('cover');
+        $tags = isset($_POST['tags']) ? strip_tags(addslashes(trim($_POST['tags']))) : '';
+        $author_uid = isset($_POST['author_uid']) ? (int)trim($_POST['author_uid']) : 1;
+        $draft = Input::postStrVar('draft', 'n');
+
+        $this->auth();
+
+        if (empty($id) || empty($title)) {
+            Output::error('parameter error');
+        }
+
+        if ($this->curUid) {
+            $author_uid = $this->curUid;
+        }
+
+        $logData = [
+            'title'   => $title,
+            'content' => $content,
+            'excerpt' => $excerpt,
+            'sortid'  => $sort_id,
+            'cover'   => $cover,
+            'author'  => $author_uid,
+            'date'    => strtotime($post_date ?: date('Y-m-d H:i:s')),
+            'hide'    => $draft === 'y' ? 'y' : 'n',
+        ];
+
+        $this->Log_Model->updateLog($logData, $id, $author_uid);
+        $this->Tag_Model->updateTag($tags, $id);
+        $this->Cache->updateCache();
+
+        doAction('save_log', $id);
+
+        output::ok();
+    }
+
+    private function article_list() {
+        $page = Input::getIntVar('page', 1);
+        $count = Input::getIntVar('count', Option::get('index_lognum'));
+        $sort_id = Input::getIntVar('sort_id', 0);
+        $keyword = Input::getStrVar('keyword');
+        $tag = Input::getStrVar('tag');
+        $order = Input::getStrVar('order');
+
+        $filters = [];
+        if ($sort_id > 0) {
+            $filters['sortid'] = $sort_id;
+        }
+        if ($keyword !== '') {
+            $filters['keyword'] = $keyword;
+        }
+        if ($tag !== '') {
+            $blogIdStr = $this->Tag_Model->getTagByName($tag);
+            if ($blogIdStr) {
+                $filters['gid_in'] = array_filter(array_map('intval', explode(',', $blogIdStr)));
+            } else {
+                $filters['gid_in'] = [];
+            }
+        }
+        switch ($order) {
+            case 'views':
+                $filters['order'] = 'views DESC';
+                break;
+            case 'comnum':
+                $filters['order'] = 'comnum DESC';
+                break;
+            default:
+                $filters['order'] = 'top DESC, sortop DESC, date DESC';
+                break;
+        }
+
+        $r = $this->Log_Model->getPublicLogs($filters, $page, $count);
+        $sort_cache = $this->Cache->readCache('sort');
+        $articles = [];
+        foreach ($r as $value) {
+            $articles[] = [
+                'id'          => (int)$value['gid'],
+                'title'       => $value['title'],
+                'cover'       => $value['log_cover'],
+                'url'         => $value['log_url'],
+                'description' => $value['log_description'],
+                'date'        => date('Y-m-d H:i:s', $value['date']),
+                'author_id'   => (int)$value['author'],
+                'author_name' => $this->getAuthorName($value['author']),
+                'sort_id'     => (int)$value['sortid'],
+                'sort_name'   => $sort_cache[$value['sortid']]['sortname'] ?? '',
+                'views'       => (int)$value['views'],
+                'comnum'      => (int)$value['comnum'],
+                'top'         => $value['top'],
+                'sortop'      => $value['sortop'],
+                'tags'        => $this->getTags((int)$value['gid']),
+            ];
+        }
+
+        output::ok(['articles' => $articles,]);
+    }
+
+    private function article_detail() {
+        $id = isset($_GET['id']) ? (int)trim($_GET['id']) : 0;
+
+        $r = $this->Log_Model->getOneLogForHome($id);
+        $sort_cache = $this->Cache->readCache('sort');
+        $article = '';
+        if (empty($r)) {
+            output::ok(['article' => $article,]);
+        }
+
+        if (!empty($r['password'])) {
+            Output::error('This article is private');
+        }
+
+        $user_info = $this->User_Model->getOneUser($r['author']);
+        $author_name = $user_info['nickname'] ?? '';
+
+        $article = [
+            'title'       => $r['log_title'],
+            'date'        => date('Y-m-d H:i:s', $r['date']),
+            'id'          => (int)$r['logid'],
+            'sort_id'     => (int)$r['sortid'],
+            'sort_name'   => $sort_cache[$r['sortid']]['sortname'] ?? '',
+            'type'        => $r['type'],
+            'author_id'   => (int)$r['author'],
+            'author_name' => $author_name,
+            'content'     => $r['log_content'],
+            'excerpt'     => $r['excerpt'],
+            'cover'       => $r['log_cover'],
+            'views'       => (int)$r['views'],
+            'comnum'      => (int)$r['comnum'],
+            'top'         => $r['top'],
+            'sortop'      => $r['sortop'],
+            'tags'        => $this->getTags($id),
+        ];
+
+        output::ok(['article' => $article,]);
+    }
+
+    private function sort_list() {
+        $sort_cache = $this->Cache->readCache('sort');
+        $data = [];
+        foreach ($sort_cache as $sort_id => $value) {
+            unset($value['children']);
+            if ($value['pid'] === 0) {
+                $data[$sort_id] = $value;
+            } else {
+                $data[$value['pid']]['children'][] = $value;
+            }
+        }
+        sort($data);
+        output::ok(['sorts' => $data,]);
+    }
+
+    private function note_post() {
+        $t = Input::postStrVar('t');
+        $private = Input::postStrVar('private', 'n');
+        $author_uid = Input::postIntVar('author_uid', 1);
+
+        $this->auth();
+
+        if (empty($t)) {
+            Output::error('parameter error');
+        }
+
+        if ($private !== 'y') {
+            $private = 'n';
+        }
+
+        if ($this->curUid) {
+            $author_uid = $this->curUid;
+        }
+
+        $data = [
+            'content' => $t,
+            'author'  => $author_uid,
+            'private' => $private,
+            'date'    => time(),
+        ];
+
+        $id = $this->Twitter_Model->addTwitter($data);
+        $this->Cache->updateCache('sta');
+        doAction('post_note', $data, $id);
+        output::ok(['note_id' => $id,]);
+    }
+
+    private function note_list() {
+        $page = Input::getIntVar('page', 1);
+        $author_uid = Input::getIntVar('author_uid');
+        $count = Input::getIntVar('count', 20);
+
+        $this->auth();
+
+        if ($this->curUid) {
+            $author_uid = $this->curUid;
+        }
+
+        $r = $this->Twitter_Model->getTwitters($author_uid, $page, $count);
+
+        $notes = [];
+        foreach ($r as $value) {
+            $notes[] = [
+                'id'          => (int)$value['id'],
+                't'           => $value['t'],
+                't_raw'       => $value['t_raw'],
+                'date'        => $value['date'],
+                'author_id'   => (int)$value['author'],
+                'author_name' => $this->getAuthorName($value['author']),
+            ];
+        }
+        output::ok(['notes' => $notes,]);
+    }
+
+    public function userinfo() {
+        $this->checkAuthCookie();
+
+        $data = [
+            'uid'         => (int)$this->curUserInfo['uid'],
+            'nickname'    => htmlspecialchars($this->curUserInfo['nickname']),
+            'role'        => $this->curUserInfo['role'],
+            'photo'       => $this->curUserInfo['photo'],
+            'avatar'      => hope_avatar_url($this->curUserInfo['photo'] ?? '', ''),
+            'email'       => $this->curUserInfo['email'],
+            'description' => htmlspecialchars($this->curUserInfo['description']),
+            'ip'          => $this->curUserInfo['ip'],
+            'create_time' => (int)$this->curUserInfo['create_time'],
+        ];
+
+        output::ok(['userinfo' => $data]);
+    }
+
+    public function upload() {
+        $sid = Input::postIntVar('sid');
+        $author_uid = Input::postIntVar('author_uid', 1);
+        $attach = $_FILES['file'] ?? '';
+
+        $this->checkApiKey();
+
+        if (!$attach || $attach['error'] === 4) {
+            Output::error('Upload error');
+        }
+
+        $ret = '';
+        addAction('upload_media', 'upload2local');
+        doOnceAction('upload_media', $attach, $ret);
+
+        if (empty($ret['success']) || !isset($ret['file_info'])) {
+            Output::error($ret['message']);
+        }
+
+        $aid = $this->Upload_Model->addMedia($ret['file_info'], $sid, $author_uid);
+
+        Output::ok(['media_id' => $aid, 'url' => $ret['url'], 'file_info' => $ret['file_info']]);
+    }
+
+    private function comment_list() {
+        $id = Input::getIntVar('id');
+        $page = Input::getIntVar('page', 1);
+
+        $comments = $this->Comment_Model->getComments($id, 'n', $page);
+        output::ok($comments);
+    }
+
+    private function getTags($id) {
+        $tag_ids = $this->Tag_Model->getTagIdsFromBlogId($id);
+        $tag_names = $this->Tag_Model->getNamesFromIds($tag_ids);
+        $tags = [];
+        if (!empty($tag_names)) {
+            foreach ($tag_names as $value) {
+                $tags[] = [
+                    'name' => htmlspecialchars($value),
+                    'url'  => Url::tag(rawurlencode($value)),
+                ];
+            }
+        }
+        return $tags;
+    }
+
+    private function getAuthorName($uid) {
+        $userInfo = $this->User_Model->getOneUser($uid);
+        return $userInfo['nickname'] ?? '';
+    }
+
+    private function auth() {
+        if (isset($_COOKIE[AUTH_COOKIE_NAME])) {
+            $this->checkAuthCookie();
+        } else {
+            $this->checkApiKey();
+        }
+    }
+
+    private function checkApiKey() {
+        $this->authReqSign = Input::requestStrVar('req_sign');
+        $this->authReqTime = Input::requestStrVar('req_time');
+        $reqNonce = Input::requestStrVar('req_nonce');
+        hope_api_verify_signature($this->authReqTime, $this->authReqSign, $reqNonce);
+    }
+
+    private function checkAuthCookie() {
+        if (!isset($_COOKIE[AUTH_COOKIE_NAME])) {
+            Output::authError('auth cookie error');
+        }
+        $userInfo = loginauth::validateAuthCookie($_COOKIE[AUTH_COOKIE_NAME]);
+        if (!$userInfo) {
+            Output::authError('auth cookie error');
+        }
+        $this->curUserInfo = $userInfo;
+        $this->curUid = (int)$userInfo['uid'];
+    }
+}

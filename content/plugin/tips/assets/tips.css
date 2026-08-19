@@ -1,0 +1,48 @@
+.tips-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(99, 102, 241, 0.18);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(59, 130, 246, 0.05));
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.tips-banner-icon {
+    flex: 0 0 auto;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.tips-banner-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.tips-banner--danger {
+    border-color: rgba(239, 68, 68, 0.45);
+    background: linear-gradient(135deg, rgba(254, 226, 226, 0.95), rgba(254, 243, 199, 0.85));
+    color: #991b1b;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.12);
+}
+
+.tips-banner--danger .tips-banner-icon {
+    font-size: 18px;
+}
+
+.tips-banner--danger strong {
+    color: #b91c1c;
+}
+
+.tips-banner--danger code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    font-size: 12px;
+    color: #7f1d1d;
+}

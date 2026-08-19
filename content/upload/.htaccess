@@ -1,0 +1,4 @@
+# 禁止在上传目录执行 PHP
+<FilesMatch "\.(?i:php|phtml|php3|php4|php5|phar)$">
+    Require all denied
+</FilesMatch>

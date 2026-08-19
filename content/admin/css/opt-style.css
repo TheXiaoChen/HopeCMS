@@ -1,0 +1,5068 @@
+.hope {
+    position: relative;
+}
+
+.hope label:not(.hope--from, .hope--to) {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.ui-sortable label:not(.hope--from, .hope--to) {
+    color: var(--hope-color);
+}
+
+label.hope--from,
+label.hope--to {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.hope-ab-icon {
+    top: 2px;
+}
+
+#screen-meta-links+.hope-options {
+    margin-top: 40px;
+}
+
+.hope-options {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.hope-header {
+    position: relative;
+}
+
+.hope-header-inner {
+    padding: 25px;
+    transition: box-shadow .3s ease;
+}
+
+.hope-header-inner h1 {
+    float: left;
+    font-size: 1.5em;
+    line-height: 26px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.hope-header-inner h1 small {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.hope-sticky .hope-header-inner {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hope-buttons {
+    float: right;
+}
+
+.hope-field-upload .btn {
+    margin-left: 5px;
+    word-break: keep-all;
+}
+
+.hope-buttons .button,
+.hope-button {
+    margin: 0 2px;
+    line-height: 26px;
+    padding: 0 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff !important;
+    text-shadow: none;
+    cursor: pointer;
+    transition: all .2s;
+    min-height: 30px !important;
+    opacity: .9;
+}
+
+.hope-button {
+    font-size: 13px;
+    padding: 8px 15px;
+}
+
+@media (max-width:767px) {
+    .hope-button {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+.hope-button.hope-btn-sm {
+    padding: 6px 10px;
+}
+
+.hope-buttons .button,
+.hope-button:focus {
+    outline: none !important;
+}
+
+a.hope-button:hover {
+    text-decoration: none;
+}
+
+.hope-buttons .hope-save {
+    min-width: 72px;
+    background-image: linear-gradient(135deg, #34ca9d 10%, #1db92c 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgb(1 65 139 / 31%);
+}
+
+.hope-buttons .hope-save.hope-save-primary,
+.hope-button-primary {
+    background-image: linear-gradient(135deg, #7bb3ef 10%, #5775cd 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgb(1 65 139 / 30%);
+}
+
+.hope-buttons .hope-reset-section,
+.hope-form-warning,
+.hope-button-warning {
+    background-image: linear-gradient(135deg, #f3ad55 10%, #f58142 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgba(203, 96, 18, 0.3);
+}
+
+.hope-buttons .hope-reset-all-btn,
+.hope-button-danger {
+    background-image: linear-gradient(135deg, #f88 10%, #FF6699 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgb(125 8 8 / 30%);
+}
+
+.hope-button-warning-2 {
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: .15s !important;
+    vertical-align: middle;
+    line-height: 1.44;
+    margin: 2px;
+    color: #ff974c;
+    background: rgba(255, 151, 76, 0.15);
+}
+
+.hope-button-danger-2 {
+    padding: 2px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: .15s !important;
+    vertical-align: middle;
+    line-height: 1.44;
+    margin: 2px;
+    color: #ff6699;
+    background: rgba(255, 102, 153, 0.15);
+}
+
+.hope-form-success,
+.hope-button-success {
+    background-image: linear-gradient(135deg, #34ca9d 10%, #1db92c 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgb(1 65 139 / 31%);
+}
+
+.hope-theme-opt-btn {
+    color: #fff;
+    background-color: #34ca9d;
+}
+
+.hope-theme-opt-btn:hover {
+    color: #fff;
+    background-color: #00ad8c;
+}
+
+.hope-buttons .hope-save {
+    min-width: 72px;
+}
+
+.hope-header-left {
+    float: left;
+}
+
+.hope-header-right {
+    float: right;
+    position: relative;
+    z-index: 2;
+}
+
+.hope-nav {
+    display: block;
+    position: relative;
+    z-index: 10;
+    float: left;
+    width: 225px;
+}
+
+.hope-nav ul {
+    clear: left;
+    margin: 0;
+    list-style-type: none;
+    padding-left: inherit;
+}
+
+.hope-nav ul li {
+    margin-bottom: 0;
+}
+
+.hope-nav ul li a {
+    font-size: 13px;
+    position: relative;
+    display: block;
+    padding: 14px 12px;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.hope-nav ul li a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.hope-nav ul li .hope-arrow:after {
+    content: "\f054";
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 9px;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -4px;
+}
+
+.hope-nav ul li.hope-tab-expanded .hope-arrow:after {
+    transform: rotate(90deg);
+}
+
+.hope-nav ul li.hope-tab-expanded ul {
+    display: block;
+}
+
+.hope-nav ul ul {
+    display: none;
+    position: relative;
+}
+
+.hope-nav ul ul li a {
+    font-size: 12px;
+    padding: 12px 14px 12px 24px;
+}
+
+@media (max-width:768px) {
+    .hope-nav ul li.hope-tab-expanded ul li:first-child a {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .hope-nav ul li.hope-tab-expanded ul li:last-child a {
+        border-radius: 0 0 5px 5px;
+    }
+
+    .hope-nav ul ul li a {
+        padding-left: 20px;
+    }
+}
+
+.hope-nav .hope-tab-icon {
+    width: 20px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.hope-nav .hope-label-error {
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.hope-nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    width: 225px;
+}
+
+.hope-wrapper {
+    position: relative;
+}
+
+.hope-content {
+    position: relative;
+    margin-left: 225px;
+    background-color: #fff;
+}
+
+.dark-hope .hope-content,
+.dark-theme .auto-hope .hope-content {
+    background-color: #181a1d;
+}
+
+.hope-sections {
+    float: left;
+    width: 100%;
+}
+
+.hope-section-title {
+    display: none;
+    padding: 20px 30px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.hope-section-title h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hope-section-title .hope-section-icon {
+    margin-right: 5px;
+}
+
+.hope-footer {
+    position: relative;
+    padding: 20px;
+    font-size: 11px;
+    z-index: 10;
+}
+
+.scroll-to-top {
+    z-index: 11;
+}
+
+.hope-copyright {
+    color: var(--hope-muted-color);
+    float: left;
+    margin-top: 5px;
+}
+
+.hope-search-all .hope-nav-background,
+.hope-search-all .hope-nav,
+.hope-show-all .hope-nav-background,
+.hope-show-all .hope-nav {
+    display: none;
+}
+
+.hope-search-all .hope-content,
+.hope-show-all .hope-content {
+    margin-left: 0;
+}
+
+.hope-search-all .hope-section-title,
+.hope-search-all .hope-section,
+.hope-show-all .hope-section-title,
+.hope-show-all .hope-section {
+    display: block !important;
+}
+
+.hope-search-all .hope-section-title {
+    display: none !important;
+}
+
+.hope-expand-all {
+    float: left;
+    padding: 0 8px;
+    margin-right: 4px;
+    z-index: 1;
+    font-size: 13px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 2px;
+    transition: all .2s;
+}
+
+.hope-expand-all span {
+    font-size: 11px;
+    vertical-align: middle;
+}
+
+.hope-search {
+    float: left;
+}
+
+.hope-search input {
+    margin: 0 2px 0 0;
+    border: none;
+    font-size: 12px;
+    line-height: 30px;
+    min-height: 30px;
+    text-align: inherit;
+    padding: 0 10px;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.hope-search input:focus {
+    box-shadow: none;
+}
+
+.hope-saving .hope-buttons,
+.hope-saving .hope-content {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.hope-metabox {
+    margin: -6px -12px -12px -12px;
+}
+
+.hope-metabox .hope-field {
+    padding: 20px;
+}
+
+.hope-metabox .hope-section-title {
+    padding: 20px;
+}
+
+.block-editor-page .hope-metabox {
+    margin: -6px -14px -14px -14px;
+}
+
+.block-editor-editor-skeleton__content .hope-metabox {
+    border-left: 1px solid #e2e4e7;
+    border-right: 1px solid #e2e4e7;
+}
+
+.hope-sections-reset {
+    float: left;
+    width: 100%;
+    position: relative;
+    z-index: 1000000;
+    text-align: right;
+    border-top: 1px solid #eee;
+}
+
+.hope-sections-reset .hope-button-cancel,
+.hope-sections-reset input {
+    display: none;
+}
+
+.hope-sections-reset label {
+    padding: 10px;
+}
+
+.hope-sections-reset span {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.hope-sections-reset input:checked~.hope-button-reset {
+    display: none;
+}
+
+.hope-sections-reset input:checked~.hope-button-cancel {
+    display: inline-block;
+}
+
+#side-sortables .hope-section-title {
+    padding: 12px;
+}
+
+#side-sortables .hope-field {
+    padding: 10px 15px;
+}
+
+#side-sortables .hope-field .hope-title {
+    float: none;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+#side-sortables .hope-field .hope-fieldset {
+    float: none;
+    width: 100%;
+}
+
+#side-sortables .hope-field-text input {
+    width: 100%;
+}
+
+#side-sortables .hope-notice {
+    padding: 10px 15px;
+}
+
+.hope-comment-metabox {
+    margin: -6px -12px -12px -12px;
+}
+
+.hope-comment-metabox .hope-field {
+    padding: 20px;
+}
+
+.hope-comment-metabox .hope-section-title {
+    padding: 20px;
+}
+
+.hope-tooltip {
+    position: absolute;
+    z-index: 5000001;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 12px;
+    max-width: 200px;
+    color: #fff;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+}
+
+.dark-hope .hope-header-inner {
+    background-color: #050505;
+    border-radius: 10px 10px 0 0;
+}
+
+.dark-hope .hope-header-inner h1 {
+    color: #fff;
+}
+
+.dark-hope .hope-header-inner h1 small {
+    color: #555;
+}
+
+.dark-hope .hope-expand-all {
+    color: #999;
+    background-color: #222;
+}
+
+.dark-hope .hope-expand-all:hover {
+    color: #fff;
+    background-color: #333;
+}
+
+.dark-hope .hope-search input {
+    color: #fff;
+    background-color: #222;
+}
+
+.dark-hope .hope-search:focus {
+    background-color: #444;
+}
+
+.dark-hope .hope-search::-webkit-input-placeholder {
+    color: #666;
+}
+
+.dark-hope .hope-nav ul li a {
+    color: #999;
+    background-color: #222;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.dark-hope .hope-nav ul li a:hover {
+    color: #fff;
+}
+
+.dark-hope .hope-nav ul li .hope-active {
+    color: #fff;
+    background-color: #111;
+}
+
+.dark-hope .hope-nav ul li .hope-active:after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border: solid transparent;
+    border-right-color: #181a1d;
+    border-width: 4px;
+    margin-top: -4px;
+}
+
+.dark-hope .hope-nav ul ul li a {
+    background-color: #191919;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.dark-hope .hope-nav ul ul li .hope-active {
+    background-color: #101010;
+}
+
+.dark-hope .hope-nav ul ul:before {
+    background-color: rgba(34, 34, 34, 0.75);
+}
+
+.dark-hope .hope-nav>ul>li:last-child>a {
+    border-bottom: none;
+}
+
+.dark-hope .hope-nav-background {
+    background-color: #222;
+}
+
+.dark-hope .hope-footer {
+    color: #555;
+    background-color: #050505;
+    border-radius: 0 0 10px 10px;
+}
+
+.hope-theme-light .hope-container {
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
+}
+
+.hope-theme-light .hope-header-inner {
+    border-bottom: none;
+    background: linear-gradient(90deg, #83a1f8 10%, #683dab 100%);
+}
+
+@media (max-width:768px) {
+    .hope-theme-light .hope-header-inner {
+        background: linear-gradient(135deg, #4e73df 10%, #683dab 100%);
+    }
+}
+
+.hope-theme-light .hope-header-inner h1 small {
+    color: #999;
+}
+
+.hope-theme-light .hope-expand-all {
+    color: #999;
+    background-color: #eee;
+}
+
+.hope-theme-light .hope-expand-all:hover {
+    color: #555;
+}
+
+.hope-theme-light .hope-search input {
+    color: #555;
+    border: none;
+    background-color: #eee;
+}
+
+.hope-theme-light .hope-search input:focus-visible {
+    outline: none;
+}
+
+.hope-theme-light .hope-search input::-webkit-input-placeholder {
+    color: #999;
+}
+
+.hope-theme-light .hope-nav ul li a {
+    color: var(--hope-color);
+    background-color: #f5f5f5;
+}
+
+.hope-theme-light .hope-nav ul li a:hover {
+    color: #222;
+}
+
+.hope-theme-light .hope-nav ul li .hope-active {
+    color: #222;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-theme-light .hope-nav ul li .hope-active:after {}
+
+.hope-theme-light .hope-nav ul ul li a {
+    background-color: var(--hope-bg-color2);
+}
+
+.hope-theme-light .hope-footer {
+    color: #555;
+    border-top: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field {
+    position: relative;
+    padding: 30px;
+}
+
+.hope-field+.hope-field {
+    border-top: 1px solid var(--hope-border-color);
+}
+
+.hope-field p:first-child {
+    margin-top: 0;
+}
+
+.hope-field p:last-child {
+    margin-bottom: 0;
+}
+
+.hope-field:after,
+.hope-field:before {
+    content: " ";
+    display: table;
+}
+
+.hope-field:after {
+    clear: both;
+}
+
+.hope-field h4 {
+    font-size: 1em;
+    margin-top: 0;
+}
+
+.hope-field .hope-title {
+    position: relative;
+    width: 20%;
+    float: left;
+}
+
+.hope-field .hope-title h4 {
+    margin: 0;
+    color: #23282d;
+}
+
+@media (min-width:780px) {
+    .hope-field .hope-title {
+        text-align: right;
+    }
+
+    .hope-field .hope-title .new-tip {
+        position: absolute;
+        right: -10%;
+        top: -80%;
+    }
+}
+
+.hope-field .hope-fieldset {
+    float: right;
+    width: calc(80% - 20px);
+}
+
+.hope-pseudo-field {
+    padding: 0 5px 0 0 !important;
+    display: inline-block;
+}
+
+.hope-pseudo-field+.hope-pseudo-field {
+    border: 0;
+}
+
+.hope-pseudo-field pre {
+    display: none;
+}
+
+.hope-field-accordion .hope-accordion-item {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.hope-field-accordion .hope-accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+.hope-field-accordion .hope-accordion-item h4 {
+    font-size: 1em;
+}
+
+.hope-field-accordion .hope-accordion-title {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    padding: 15px;
+    min-height: 0;
+    font-size: 100%;
+    user-select: none;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 5px;
+    transition: border-color .15s;
+}
+
+.hope-field-accordion .hope-accordion-title:active,
+.hope-field-accordion .hope-accordion-title:hover,
+.hope-field-accordion .hope-accordion-title:focus {
+    outline: none;
+    border-color: rgba(115, 141, 222, 0.83);
+}
+
+.hope-field-accordion .hope-accordion-title .hope--icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 2px;
+}
+
+.hope-field-accordion .hope-accordion-icon {
+    width: 16px;
+    text-align: center;
+}
+
+.hope-field-accordion .hope-accordion-content {
+    display: none;
+    padding: 0;
+    border: 1px solid var(--hope-element-border-color);
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    background-color: var(--hope-bg-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-field-accordion .hope-accordion-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-accordion .hope-accordion-open {
+    display: block;
+}
+
+.hope-field-background .hope-field {
+    border: 0 !important;
+    padding: 0;
+    margin-bottom: 6px;
+    margin-right: 6px;
+}
+
+.hope-field-background .hope--title {
+    color: #777;
+    font-size: 12px;
+}
+
+.hope-field-background .hope--background-colors {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hope-field-background .hope--background-attributes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hope-field-background .hope--background-attributes select {
+    min-width: 100%;
+    margin: 0;
+}
+
+.hope-field-background .hope--background-attributes .hope-field {
+    flex: 1;
+}
+
+.hope-field-background .hope--attributes-hidden {
+    display: none;
+}
+
+.hope-field-backup textarea {
+    width: 100%;
+    min-height: 200px;
+    margin-bottom: 5px;
+}
+
+.hope-field-backup small {
+    display: inline-block;
+    margin: 5px;
+}
+
+.hope-field-backup hr {
+    margin: 20px 0;
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.hope-field-border .hope--inputs,
+.hope-field-spacing .hope--inputs,
+.hope-field-dimensions .hope--inputs {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hope-field-border .hope--input,
+.hope-field-spacing .hope--input,
+.hope-field-dimensions .hope--input {
+    display: flex;
+    padding-right: 6px;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+}
+
+.hope-field-border .hope--input select,
+.hope-field-spacing .hope--input select,
+.hope-field-dimensions .hope--input select {
+    margin: 0;
+}
+
+.hope-field-border .hope--input input,
+.hope-field-spacing .hope--input input,
+.hope-field-dimensions .hope--input input {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 65px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.hope-field-border .hope--color,
+.hope-field-spacing .hope--color,
+.hope-field-dimensions .hope--color {
+    float: left;
+}
+
+.hope-field-border .hope--label,
+.hope-field-spacing .hope--label,
+.hope-field-dimensions .hope--label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    user-select: none;
+    min-width: 20px;
+    max-width: 100%;
+    padding: 0 4px;
+    font-size: 12px;
+    text-align: center;
+    color: #555;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: #f5f5f5;
+}
+
+.hope-field-border .hope--icon,
+.hope-field-spacing .hope--icon,
+.hope-field-dimensions .hope--icon {
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.hope-field-border .hope--icon+input,
+.hope-field-spacing .hope--icon+input,
+.hope-field-dimensions .hope--icon+input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.hope-field-border .hope--unit,
+.hope-field-spacing .hope--unit,
+.hope-field-dimensions .hope--unit {
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.hope-field-border .hope--is-unit,
+.hope-field-spacing .hope--is-unit,
+.hope-field-dimensions .hope--is-unit {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.hope-field-button_set .hope--buttons {
+    display: inline-block;
+}
+
+.hope-field-button_set .hope--button {
+    position: relative;
+    z-index: 1;
+    float: left;
+    cursor: pointer;
+    padding: 7px 14px;
+    min-width: 40px;
+    text-align: center;
+    color: #555;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: #f7f7f7;
+    user-select: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hope-field-button_set .hope--button:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.hope-field-button_set .hope--button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.hope-field-button_set .hope--button:not(:first-child) {
+    margin-left: -1px;
+}
+
+.hope-field-button_set .hope--button:hover {
+    background-color: #eee;
+}
+
+.hope-field-button_set .hope--active:hover,
+.hope-field-button_set .hope--active {
+    z-index: 2;
+    color: #fff;
+    border-color: #4669d0;
+    background-color: #4e73df;
+}
+
+.hope-field-button_set input {
+    display: none;
+}
+
+.hope-field-checkbox ul,
+.hope-field-radio ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow-y: auto;
+    max-height: 305px;
+}
+
+.hope-field-checkbox ul li,
+.hope-field-radio ul li {
+    margin-bottom: 6px;
+}
+
+.hope-field-checkbox ul ul,
+.hope-field-radio ul ul {
+    max-height: none;
+}
+
+.hope-field-checkbox ul ul li,
+.hope-field-radio ul ul li {
+    margin-left: 8px;
+}
+
+.hope-field-checkbox ul ul li:first-child,
+.hope-field-radio ul ul li:first-child {
+    margin-left: 0;
+}
+
+.hope-field-checkbox .hope--inline-list li,
+.hope-field-radio .hope--inline-list li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.hope-field-checkbox .hope--text,
+.hope-field-radio .hope--text {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.hope-field-checkbox .hope-checker,
+.hope-field-radio .hope-checker {
+    cursor: pointer;
+}
+
+.hope-field-code_editor .CodeMirror {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+}
+
+.hope-field-code_editor .cm-s-default {
+    border: 1px solid var(--hope-border-color);
+}
+
+.hope-field-code_editor textarea {
+    width: 100%;
+    height: 400px;
+}
+
+.hope-field-color>input {
+    opacity: 0.75;
+    width: 115px;
+    max-width: 100%;
+}
+
+.hope-field-color .button.hope-picker-clear {
+    padding: 0 8px;
+    margin-left: 6px;
+    line-height: 2.54545455;
+    min-height: 30px;
+}
+
+.hope-field-color_group .hope--left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.hope-field-color_group .hope--title {
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.hope-field-fieldset .hope-fieldset-content {
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-field-fieldset .hope-fieldset-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-fieldset .hope-field-subheading {
+    font-size: 13px;
+}
+
+.hope-field-date input {
+    margin: 0;
+}
+
+.hope-field-date .hope--to {
+    margin-left: 7px;
+}
+
+.hope-datepicker-wrapper {
+    margin-top: 5px;
+    width: auto;
+    background-color: var(--hope-bg-color);
+    z-index: 9999999 !important;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    -webkit-animation: down_effect .2s .1s ease both;
+    -moz-animation: down_effect .2s .1s ease both;
+    -o-animation: down_effect .2s .1s ease both;
+    -ms-animation: down_effect .2s .1s ease both;
+    animation: down_effect .2s .1s ease both;
+}
+
+.hope-datepicker-wrapper * {
+    float: none;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hope-datepicker-wrapper .ui-widget-header,
+.hope-datepicker-wrapper .ui-datepicker-header {
+    color: #fff;
+    background: #4e73df;
+    border-radius: 10px 10px 0 0;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-header .ui-state-hover {
+    cursor: pointer;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-title {
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-prev,
+.hope-datepicker-wrapper .ui-datepicker-next {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 12px;
+    text-align: center;
+    width: 41px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-next span,
+.hope-datepicker-wrapper .ui-datepicker-prev span {
+    display: none;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-prev {
+    float: left;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-next {
+    float: right;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-prev:before {
+    content: '\f053';
+}
+
+.hope-datepicker-wrapper .ui-datepicker-next:before {
+    content: '\f054';
+}
+
+.hope-datepicker-wrapper .ui-datepicker-prev-hover,
+.hope-datepicker-wrapper .ui-datepicker-next-hover {
+    opacity: 0.75;
+}
+
+.hope-datepicker-wrapper tbody .ui-datepicker-week-col {
+    background-color: #f7f7f7;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-buttonpane {
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+    border-radius: 0 0 11px 11px;
+}
+
+.dark-hope .hope-datepicker-wrapper tbody .ui-datepicker-week-col,
+.dark-hope .hope-datepicker-wrapper .ui-datepicker-buttonpane {
+    background-color: #32373c;
+}
+
+.hope-datepicker-wrapper .ui-datepicker-buttonpane button {
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 3px 8px;
+    color: var(--hope-color);
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    border-radius: 5px;
+}
+
+.hope-datepicker-wrapper select {
+    margin: 0 4px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.hope-datepicker-wrapper select option {
+    color: #555;
+}
+
+.hope-datepicker-wrapper table {
+    font-size: 13px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.hope-datepicker-wrapper thead {
+    color: #fff;
+    background: #32373c;
+}
+
+.hope-datepicker-wrapper th {
+    text-align: center;
+    padding: 7px;
+    border: 1px solid #444;
+}
+
+.hope-datepicker-wrapper td {
+    text-align: center;
+}
+
+.hope-datepicker-wrapper td.ui-datepicker-other-month {
+    border: transparent;
+}
+
+.hope-datepicker-wrapper td .ui-state-default {
+    color: var(--hope-muted-color);
+    width: auto;
+    display: block;
+    padding: 6px 12px;
+}
+
+.hope-datepicker-wrapper td .ui-state-active {
+    color: #fff;
+    background-color: #4e73df;
+    border-radius: 5px;
+    transition: all .15s ease;
+}
+
+.hope-datepicker-wrapper td .ui-state-hover {
+    color: #fff;
+    background-color: #ff6699;
+    border-radius: 5px;
+    transition: all .15s ease;
+}
+
+.hope-datepicker-wrapper td.ui-state-disabled .ui-state-default {
+    opacity: 0.5;
+}
+
+.hope-field-gallery input {
+    display: none;
+}
+
+.hope-field-gallery ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hope-field-gallery ul li {
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+    margin: 0 5px 10px 0;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.hope-field-gallery ul li img {
+    max-height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hope-field-gallery .button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.hope-field-group .hope-cloneable-hidden {
+    display: none !important;
+}
+
+.hope-field-group .hope-cloneable-wrapper {
+    position: relative;
+}
+
+.hope-field-group .hope-cloneable-item {
+    display: none;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.hope-field-group .hope-cloneable-item h4 {
+    font-size: 1em;
+}
+
+.hope-field-group .ui-accordion .hope-cloneable-item {
+    display: block;
+}
+
+.hope-field-group .ui-sortable-placeholder {
+    height: 48px;
+}
+
+.hope-field-group .hope-cloneable-content {
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-field-group .hope-cloneable-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-group .hope-cloneable-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    margin: 0;
+    padding: 15px 65px 15px 10px;
+    min-height: 0;
+    font-size: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    transition: border-color .15s;
+}
+
+.hope-field-group .hope-cloneable-title:active,
+.hope-field-group .hope-cloneable-title:hover,
+.hope-field-group .hope-cloneable-title:focus {
+    border-color: rgba(115, 141, 222, 0.83);
+    outline: none;
+}
+
+.hope-field-group .hope-cloneable-title .hope-cloneable-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    white-space: normal;
+    margin-right: 20px;
+}
+
+.hope-field-group .hope-cloneable-helper {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 1em;
+}
+
+.hope-field-group .hope-cloneable-helper i {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--hope-muted-color);
+}
+
+.hope-field-group .hope-cloneable-helper i:hover {
+    color: #555;
+}
+
+.hope-field-group .hope-cloneable-content {
+    padding: 0;
+    border-top: 0;
+}
+
+.hope-field-group .hope-cloneable-title-prefix,
+.hope-field-group .hope-cloneable-title-number {
+    margin-right: 5px;
+}
+
+.hope-field-group .hope-cloneable-alert {
+    display: none;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    color: #ff6699;
+    border: 1px solid #ff6699;
+    border-radius: 5px;
+    background-color: rgba(255, 102, 153, 0.2);
+}
+
+.hope-field-group .widget-placeholder {
+    margin-bottom: 10px;
+    border: 1px dashed #f1c40f;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-group .hope-cloneable-header-icon {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    width: 17px;
+    text-indent: 0;
+    vertical-align: text-top;
+}
+
+.hope-field-group .hope-cloneable-placeholder {
+    background-color: var(--hope-bg-color3);
+    margin-top: 4px;
+    width: 100px;
+    height: 10px;
+    font-size: 10px;
+    line-height: 10px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 2px;
+}
+
+.hope-field-icon input {
+    display: none;
+}
+
+.hope-field-icon .button {
+    margin-right: 5px;
+}
+
+.hope-field-icon .hope-icon-preview i {
+    display: inline-block;
+    font-size: 20px;
+    width: 31px;
+    height: 31px;
+    line-height: 28px;
+    margin-right: 5px;
+    text-align: center;
+    vertical-align: middle;
+    color: #2e2e2e;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+}
+
+.hope-field-image_select .hope--image {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+
+.hope-field-image_select .hope--inline-list .hope--image {
+    display: block;
+}
+
+.hope-field-image_select figure {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    margin: 0;
+    vertical-align: bottom;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--hope-bg-color);
+    user-select: none;
+    transition: all .2s;
+}
+
+.hope-field-image_select figure:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 10px;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f00c";
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    opacity: 0;
+    color: #fff;
+    background-color: #222;
+    transition: opacity .2s;
+}
+
+.hope-field-image_select .hope--active figure {
+    border-color: #222;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.hope-field-image_select .hope--active figure:before {
+    opacity: 1;
+}
+
+.hope-field-image_select img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    border-radius: 3px;
+    padding: 2px;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color4);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 8%);
+}
+
+.hope-field-image_select input {
+    display: none;
+}
+
+.hope-field-link_color .hope--left {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.hope-field-link_color .hope--title {
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.hope-field-map input {
+    width: 100%;
+}
+
+.hope-field-map input[type="text"].ui-autocomplete-loading {
+    background-position-x: calc(100% - 5px);
+}
+
+.hope-field-map .hope--map-search+.hope--map-osm-wrap {
+    margin-top: 10px;
+}
+
+.hope-field-map .hope--map-osm-wrap {
+    position: relative;
+    padding: 5px;
+    border: 1px solid #eee;
+    background-color: var(--hope-bg-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-field-map .hope--map-osm {
+    position: relative;
+    z-index: 1;
+    min-height: 250px;
+}
+
+.hope-field-map .hope--map-inputs {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hope-field-map .hope--map-input {
+    flex: 1;
+}
+
+.hope-field-map .hope--map-input:last-child {
+    padding-left: 10px;
+}
+
+.hope-field-map label {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin: 0 0 2px 0;
+}
+
+.hope-map-ui-autocomplate {
+    z-index: 999999;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.hope-field-media .hope--placeholder {
+    display: flex;
+    align-items: flex-start;
+}
+
+.hope-field-media .hope--placeholder input {
+    width: 100%;
+    margin: 0;
+}
+
+.hope-field-media .button {
+    margin-left: 5px;
+}
+
+.hope-field-media .hidden+.button {
+    margin-left: 0;
+}
+
+.hope--preview {
+    position: relative;
+}
+
+.hope--preview .fa-rectangle-xmark {
+    position: absolute;
+    z-index: 1;
+    right: 4px;
+    font-size: 24px;
+    width: 28px;
+    line-height: 22px;
+    color: #dd3333;
+}
+
+.hope--preview .fa-rectangle-xmark:hover {
+    opacity: 1;
+}
+
+.hope--preview .fa-rectangle-xmark:focus {
+    box-shadow: none;
+}
+
+.hope-field-palette .hope--palette {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid var(--hope-element-border-color);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all .2s;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+}
+
+.hope-field-palette .hope--palette span {
+    vertical-align: middle;
+    display: inline-block;
+    width: 22px;
+    height: 60px;
+    border-radius: 3px;
+    line-height: 60px;
+    overflow: hidden;
+    text-indent: -999px;
+}
+
+.hope-field-palette .hope--palette:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 10px;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f00c";
+    width: 16px;
+    height: 16px;
+    line-height: 14px;
+    opacity: 0;
+    color: #fff;
+    background-color: #222;
+    transition: opacity .2s;
+}
+
+.hope-field-palette .hope--active {
+    border-color: #222;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.hope-field-palette .hope--active:before {
+    opacity: 1;
+}
+
+.hope-field-palette input {
+    display: none;
+}
+
+.hope-field-repeater .ui-sortable-placeholder {
+    height: 60px;
+}
+
+.hope-field-repeater .hope-field-text input {
+    width: 100%;
+}
+
+.hope-field-repeater .hope-repeater-hidden {
+    display: none !important;
+}
+
+.hope-field-repeater .hope-repeater-wrapper .hope-repeater-item {
+    display: table;
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    border-radius: 5px;
+    transition: border-color .15s;
+}
+
+.hope-field-repeater .hope-repeater-wrapper .hope-repeater-item:hover {
+    border: 1px solid rgba(115, 141, 222, 0.83);
+}
+
+.hope-field-repeater .hope-repeater-wrapper .hope-repeater-item h4 {
+    font-size: 1em;
+}
+
+.hope-field-repeater .hope-repeater-content {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: var(--hope-bg-color);
+    border-radius: 5px;
+}
+
+.hope-field-repeater .hope-repeater-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-repeater .hope-repeater-helper {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1em;
+    border-left: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    border-radius: 0 5px 5px 0;
+}
+
+.hope-field-repeater .hope-repeater-helper i {
+    display: inline-block;
+    cursor: pointer;
+    color: var(--hope-muted-color);
+    padding: 5px;
+}
+
+.hope-field-repeater .hope-repeater-helper i:hover {
+    color: #555;
+}
+
+.hope-field-repeater .hope-repeater-helper-inner {
+    width: 75px;
+}
+
+.hope-field-repeater .hope-repeater-alert {
+    display: none;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    color: #ff6699;
+    border: 1px solid #ff6699;
+    border-radius: 5px;
+    background-color: rgba(255, 102, 153, 0.2);
+}
+
+.hope-field-repeater .widget-placeholder {
+    height: 50px;
+    margin-bottom: 3px;
+    border: 1px dashed #f1c40f;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-repeater .ui-sortable-helper {
+    height: 50px !important;
+    overflow: hidden !important;
+    border-color: #ccc !important;
+    background-color: #eee !important;
+    opacity: 0.5;
+}
+
+.hope-field-repeater .ui-sortable-helper .hope-repeater-helper,
+.hope-field-repeater .ui-sortable-helper .hope-repeater-content {
+    display: none;
+}
+
+.hope-field-select .hope-fieldset {
+    min-height: 30px;
+}
+
+.hope-field-select .hope-chosen {
+    display: none;
+}
+
+.hope-field-select select {
+    max-width: 100%;
+    margin: 0;
+    padding: 5px 30px 5px 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--hope-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px 12px;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.hope-field-select select:not(.hope-field-select select[multiple="multiple"]) {
+    background-image: url("../img/select.svg");
+    padding-right: 30px;
+}
+
+.dark-hope .hope-field-select select {
+    background-image: url("../img/select_light.png");
+}
+
+select option:checked {
+    border-radius: 5px;
+    margin: 2px 0;
+    padding: 2px;
+}
+
+.dark-hope select option:checked {
+    background-color: var(--hope-bg-color3);
+    color: var(--hope-color);
+}
+
+.hope-field-slider .hope--wrap {
+    display: flex;
+    align-items: center;
+}
+
+.hope-field-slider .hope--input {
+    display: flex;
+}
+
+.hope-field-slider .hope--unit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+    padding: 0 6px;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 0 4px 4px 0;
+    color: #555;
+    border: 1px solid var(--hope-element-border-color);
+    border-left: 0;
+    background-color: #f5f5f5;
+}
+
+.hope-field-slider .hope-slider-ui {
+    margin-right: 15px;
+}
+
+.hope-field-slider input[type=number] {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 70px;
+    text-align: center;
+    border-radius: 5px 0 0 5px !important;
+}
+
+.hope-field-slider .hope--is-unit {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.hope-field-slider .ui-slider {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    border: none;
+    background: var(--hope-element-border-color);
+    border-radius: 2px;
+}
+
+.hope-field-slider .ui-slider-range {
+    height: 3px;
+    border: none;
+    background: #333;
+    border-radius: 2px;
+}
+
+.hope-field-slider .ui-slider-handle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: -7px;
+    margin-left: -8px;
+    border: none;
+    background: #333;
+    border-radius: 2px;
+}
+
+.hope-field-slider .ui-state-active,
+.hope-field-slider .ui-slider-handle:hover {
+    cursor: pointer;
+    background: #111;
+}
+
+.hope-sortable-item .ui-sortable-placeholder {
+    height: 60px;
+}
+
+.hope-field-sortable .hope-field-text input {
+    width: 100%;
+    max-width: 100%;
+}
+
+.hope-field-sortable .hope-sortable .hope-sortable-item {
+    display: table;
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    transition: border-color .15s;
+}
+
+.hope-field-sortable .hope-sortable .hope-sortable-item:hover {
+    border: 1px solid rgba(115, 141, 222, 0.83);
+}
+
+.hope-field-sortable .hope-sortable .hope-sortable-item h4 {
+    font-size: 1em;
+}
+
+.hope-field-sortable .hope-sortable-content {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 5px;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-sortable .hope-sortable-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-sortable .hope-sortable-helper {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1em;
+    border-left: 1px solid var(--hope-element-border-color);
+    border-radius: 0 5px 5px 0;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-sortable .hope-sortable-helper i {
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+    color: var(--hope-muted-color);
+}
+
+.hope-field-sortable .hope-sortable-helper i:hover {
+    opacity: 0.5;
+}
+
+.hope-field-sortable .widget-placeholder {
+    height: 50px;
+    margin-bottom: 3px;
+    border: 1px dashed #f1c40f;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-sortable .ui-sortable-helper {
+    height: 50px !important;
+    overflow: hidden !important;
+    border-color: #ccc !important;
+    background-color: #eee !important;
+    opacity: 0.5;
+}
+
+.hope-field-sortable .ui-sortable-helper .hope-sortable-helper,
+.hope-field-sortable .ui-sortable-helper .hope-sortable-content {
+    display: none;
+}
+
+.ui-sortable-placeholder {
+    border-radius: 5px;
+    border: 2px dashed #f1c40f !important;
+    background-color: rgba(241, 225, 151, 0.44) !important;
+}
+
+.hope-field-sorter .ui-sortable-placeholder {
+    height: 40px;
+}
+
+.hope-field-sorter .hope-modules {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.hope-field-sorter .hope-modules:first-child {
+    padding-right: 15px;
+}
+
+.hope-field-sorter .hope-modules:last-child {
+    padding-left: 15px;
+}
+
+.hope-field-sorter .hope-disabled,
+.hope-field-sorter .hope-enabled {
+    padding: 5px 15px;
+    border: 1px dashed var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    border-radius: 0 0 5px 5px;
+}
+
+.hope-field-sorter .hope-disabled li {
+    opacity: 0.5;
+    transition: opacity .15s;
+}
+
+.hope-field-sorter .hope-disabled .ui-sortable-helper {
+    opacity: 1;
+}
+
+.hope-field-sorter .hope-sorter-title {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px;
+    color: var(--hope-color);
+    text-align: center;
+    border: 1px dashed var(--hope-element-border-color);
+    border-bottom: none;
+    background-color: var(--hope-bg-color);
+    text-transform: uppercase;
+    border-radius: 5px 5px 0 0;
+}
+
+.hope-field-sorter ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 62px;
+}
+
+.hope-field-sorter ul li {
+    margin: 10px 0;
+    padding: 10px 15px;
+    cursor: move;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color3);
+    border-radius: 5px;
+    transition: border-color .15s;
+}
+
+.hope-field-sorter ul li:hover {
+    border-color: rgba(115, 141, 222, 0.83);
+}
+
+.hope-field-spinner .hope--spin {
+    display: flex;
+}
+
+.hope-field-spinner .ui-spinner {
+    display: flex;
+}
+
+.hope-field-spinner .ui-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-width: 20px;
+    padding: 0 4px;
+    color: #555;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: #f5f5f5;
+}
+
+.hope-field-spinner .ui-spinner-button {
+    cursor: pointer;
+}
+
+.hope-field-spinner .ui-spinner-button:hover {
+    background-color: #e7e7e7;
+}
+
+.hope-field-spinner .ui-spinner-button:active {
+    background-color: #ddd;
+}
+
+.hope-field-spinner .ui-spinner-button:before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.hope-field-spinner .ui-spinner-down {
+    order: 1;
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.hope-field-spinner .ui-spinner-down:before {
+    content: "\f0d9";
+}
+
+.hope-field-spinner .ui-spinner-input {
+    order: 2;
+    border-radius: 0 !important;
+    line-height: 2;
+    min-height: auto;
+}
+
+.hope-field-spinner .hope--unit {
+    order: 3;
+    border-left: 0;
+    user-select: none;
+}
+
+.hope-field-spinner .ui-spinner-up {
+    order: 4;
+    border-left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.hope-field-spinner .ui-spinner-up:before {
+    content: "\f0da";
+}
+
+.hope-field-spinner input {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    text-align: center;
+    margin: 0;
+    padding: 0 8px;
+    border-radius: 0;
+}
+
+.hope-field-spinner .ui-button-text,
+.hope-field-spinner .ui-button-icon,
+.hope-field-spinner .ui-button-icon-space {
+    display: none;
+}
+
+.hope-field-switcher .hope--switcher {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    width: 60px;
+    height: 26px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #ff6699;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.hope-field-switcher .hope--ball {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all .1s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.hope-field-switcher .hope--on,
+.hope-field-switcher .hope--off {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-size: 11px;
+    line-height: 22px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    padding-right: 18px;
+    opacity: 0;
+    transition: all .1s;
+}
+
+.hope-field-switcher .hope--off {
+    padding-right: 0;
+    padding-left: 18px;
+    opacity: 0;
+}
+
+.hope-field-switcher .hope--active .hope--on,
+.hope-field-switcher .hope--off.hope--has {
+    opacity: 1;
+}
+
+.hope-field-switcher .hope--active {
+    background: #64bd63;
+}
+
+.hope-field-switcher .hope--active .hope--on {
+    opacity: 1;
+}
+
+.hope-field-switcher .hope--active .hope--off {
+    opacity: 0;
+}
+
+.hope-field-switcher .hope--active .hope--ball {
+    left: 100%;
+    margin-left: -28px;
+}
+
+.hope-field-switcher .hope--label {
+    float: left;
+    margin-left: 8px;
+    font-weight: 400;
+    color: #999;
+}
+
+.hope-field-switcher input {
+    display: none;
+}
+
+.hope-field-tabbed .hope-tabbed-content {
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color);
+    border-radius: 0 5px 5px 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-field-tabbed .hope-tabbed-content>.hope-field {
+    padding: 15px;
+}
+
+.hope-field-tabbed .hope-tabbed-nav .hope--icon {
+    padding-right: 5px;
+}
+
+.hope-field-tabbed .hope-tabbed-nav a {
+    display: inline-block;
+    padding: 12px 15px;
+    margin-top: 1px;
+    margin-right: 5px;
+    margin-bottom: -1px;
+    position: relative;
+    text-decoration: none;
+    color: var(--hope-color);
+    font-weight: 600;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color2);
+    transition: all .2s;
+}
+
+.hope-field-tabbed .hope-tabbed-nav a:hover {
+    background-color: var(--hope-bg-color3);
+}
+
+.hope-field-tabbed .hope-tabbed-nav a.hope-tabbed-active {
+    background-color: var(--hope-bg-color);
+    border-bottom-color: var(--hope-bg-color);
+}
+
+.hope-field-tabbed .hope-tabbed-nav a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.hope-field-text input {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    background-color: var(--hope-bg-color);
+    background-clip: padding-box;
+    border: 1px solid #e3e3e3;
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.hope-field-textarea textarea {
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    padding: 2px 6px;
+    line-height: 1.4;
+    resize: vertical;
+    font-size: 14px;
+    box-shadow: 0 0 0 transparent;
+    border-radius: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color4);
+    color: var(--hope-color);
+    min-height: 35px;
+    max-height: 500px;
+}
+
+.hope-field-textarea .hope-shortcode-button {
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.hope-field-typography textarea,
+.hope-field-typography select {
+    min-width: 100%;
+    margin: 0;
+}
+
+.hope-field-typography .hope--title {
+    color: #777;
+    margin: 0 0 2px 0;
+    font-size: 12px;
+}
+
+.hope-field-typography .hope--title small {
+    vertical-align: top;
+}
+
+.hope-field-typography .hope--blocks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hope-field-typography .hope--block {
+    flex: 1;
+    padding-right: 6px;
+    padding-bottom: 6px;
+}
+
+.hope-field-typography .hope--input {
+    margin: 0;
+    min-width: 100%;
+}
+
+.hope-field-typography .hope--input-wrap {
+    position: relative;
+}
+
+.hope-field-typography .hope--unit {
+    position: absolute;
+    z-index: 1;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    padding: 2px 6px;
+    color: #666;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 2px;
+    background: #eee;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hope-field-typography .hope--preview {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 20px;
+    color: #222;
+    border: 1px solid #eee;
+    background-color: var(--hope-bg-color);
+    border-radius: 2.5px;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: background-color .2s, border-color .2s;
+}
+
+.hope-field-typography .hope--block-preview {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.hope-field-typography .hope--black-background {
+    border-color: #000;
+    background-color: #000;
+}
+
+.hope-field-typography .hope--toggle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: #999;
+}
+
+.hope-field-typography .hope--block-extra-styles {
+    margin-top: 5px;
+}
+
+.hope-field-upload input {
+    margin: 0;
+    display: block;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.5;
+    appearance: none;
+    background-color: var(--hope-bg-color);
+    background-clip: padding-box;
+    border: 1px solid #e3e3e3;
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+    border-radius: 5px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.hope-field-upload .hope--wrap {
+    display: flex;
+    align-items: center;
+}
+
+.hope-field-upload .button {
+    margin-left: 5px;
+}
+
+.hope-field-wp_editor .hope-wp-editor {
+    float: left;
+    width: 100%;
+}
+
+.hope-field-wp_editor .mce-toolbar-grp {
+    border: none;
+}
+
+.hope-field-wp_editor .mce-btn.mce-active button,
+.hope-field-wp_editor .mce-btn.mce-active:hover button,
+.hope-field-wp_editor .mce-btn.mce-active i,
+.hope-field-wp_editor .mce-btn.mce-active:hover i {
+    color: #23282d;
+}
+
+.hope-field-wp_editor .wp-media-buttons {
+    position: relative;
+    z-index: 2;
+}
+
+.hope-field-wp_editor .wp-editor-tabs {
+    position: relative;
+    z-index: 1;
+}
+
+.hope-field-wp_editor .hope-no-tinymce {
+    border: 1px solid #e5e5e5;
+}
+
+.hope-field-wp_editor .hope-no-quicktags .wp-media-buttons {
+    float: none;
+    display: block;
+}
+
+.hope-field-wp_editor .hope-no-quicktags .mce-tinymce {
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+}
+
+.hope-field-wp_editor textarea {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+}
+
+.hope-field-heading {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--hope-color);
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field-subheading {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    color: var(--hope-color);
+    background-color: var(--hope-bg-color2);
+}
+
+.hope-fieldset-content .hope-field-subheading {
+    border-radius: 5px 5px 0 0;
+}
+
+.hope-field-submessage {
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.hope-field-submessage+.hope-field {
+    border-top: 0 !important;
+}
+
+.hope-submessage {
+    font-size: 12px;
+    padding: 17px 30px;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.hope-submessage-success {
+    color: #3c763d;
+    border-color: #d6e9c6;
+    background-color: #dff0d8;
+}
+
+.hope-submessage-info {
+    color: #31708f;
+    border-color: #bce8f1;
+    background-color: #d9edf7;
+}
+
+.hope-submessage-warning {
+    color: #8a6d3b;
+    border-color: #faebcc;
+    background-color: #fcf8e3;
+}
+
+.hope-submessage-danger,
+.hope-submessage-error {
+    color: #a94442;
+    border-color: #ebccd1;
+    background-color: #f2dede;
+}
+
+.hope-submessage-normal {
+    color: #23282d;
+    border-color: #eee;
+    background-color: #f7f7f7;
+}
+
+.hope-field-notice {
+    background-color: var(--hope-bg-color);
+}
+
+.hope-notice {
+    padding: 12px;
+    background-color: var(--hope-bg-color2);
+    border-left-style: solid;
+    border-left-width: 4px;
+    border-radius: 2px 5px 5px 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.hope-notice-success {
+    border-color: #46b450;
+}
+
+.hope-notice-info {
+    border-color: #339fd4;
+}
+
+.hope-notice-warning {
+    border-color: #ffbc00;
+}
+
+.hope-notice-danger {
+    border-color: #dc3232;
+}
+
+.hope-notice-normal {
+    border-color: #222;
+}
+
+.hope-field-number input {
+    width: 100%;
+    margin: 0;
+}
+
+.hope-field-number .hope--wrap {
+    position: relative;
+    float: left;
+    width: 100px;
+}
+
+.hope-field-number .hope--unit {
+    position: absolute;
+    z-index: 1;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    padding: 2px 6px;
+    color: #666;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 2px;
+    background: #eee;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hope-field-link input {
+    display: none;
+}
+
+.hope-field-link .hope--result {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 7px 10px;
+    margin-bottom: 7px;
+    color: var(--hope-muted-color);
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color2);
+    border-radius: 5px;
+}
+
+.hope-field-link .hope--wrap {
+    position: relative;
+    float: left;
+    width: 100px;
+}
+
+.hope-field-link .hope--unit {
+    position: absolute;
+    z-index: 1;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    padding: 2px 6px;
+    color: #666;
+    font-size: 11px;
+    line-height: 1;
+    border-radius: 2px;
+    background: #eee;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hope-help {
+    cursor: help;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.hope-help .hope-help-text {
+    display: none;
+}
+
+.hope-image-preview {
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+    min-width: 44px;
+    min-height: 22px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: var(--hope-bg-color4);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.hope-image-preview img {
+    max-height: 90px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width:400px) {
+    .hope-image-preview img {
+        max-height: 75px;
+    }
+}
+
+.hope-field-custom .hope-field {
+    padding: 0;
+}
+
+.hope-field .chosen-container-single .chosen-single {
+    height: 28px;
+    line-height: 26px;
+}
+
+.hope-field .chosen-container-single .chosen-single abbr {
+    top: 0;
+    right: 20px;
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 12px;
+    height: 100%;
+    width: 18px;
+    color: #aaa;
+    text-align: center;
+    background: none;
+}
+
+.hope-field .chosen-container-single .chosen-single abbr:before {
+    content: "\f00d";
+}
+
+.hope-field .chosen-container-single .chosen-single abbr:hover {
+    color: #555;
+}
+
+.hope-field .chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 13px;
+    height: auto;
+    width: 10px;
+    text-align: center;
+    background: none;
+    display: inline-block;
+    margin-left: 3px;
+    color: #FF6699;
+    cursor: pointer;
+}
+
+.hope-field .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:before {
+    content: "\f00d";
+    display: inline-block;
+}
+
+.hope-field .chosen-container-multi .chosen-choices li.search-choice .search-choice-close:hover {
+    color: #da5984;
+    transition: all .3s;
+}
+
+.hope-field .chosen-container-single .chosen-single div b {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 14px;
+    color: #aaa;
+    background: none;
+}
+
+.hope-field .chosen-container-single .chosen-single div b:before {
+    content: "\f107";
+}
+
+.hope-field .chosen-container-single .chosen-single div b:hover {
+    color: #555;
+}
+
+.hope-field .chosen-container-multi .chosen-choices li.search-choice-placeholder {
+    border: 1px dashed #aaa;
+    margin: 3px 5px 3px 0;
+}
+
+.hope-field .chosen-container-multi .ui-sortable li.search-choice span {
+    cursor: move;
+}
+
+.hope-field .chosen-container-active.chosen-with-drop .chosen-single div b:before {
+    content: "\f106";
+}
+
+.hope-field .chosen-container-single .chosen-single-with-deselect span {
+    margin-right: 40px;
+}
+
+.hope-field .chosen-container-single .chosen-search input[type="text"] {
+    background: none;
+}
+
+.hope-field .chosen-container-single .chosen-search:before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    font-size: 11px;
+    content: "\f002";
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    color: #aaa;
+}
+
+.hope-field .hope-color-picker {
+    display: inline-block;
+}
+
+.hope-field .hope-color-picker .wp-color-result.button {
+    margin-bottom: 0;
+}
+
+.hope-field .hope--transparent-wrap {
+    display: none;
+    position: relative;
+    top: -1px;
+    width: 235px;
+    padding: 9px 10px;
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-field .hope-picker-active .hope--transparent-wrap {
+    display: block;
+}
+
+.hope-field .hope--transparent-slider {
+    position: absolute;
+    width: 190px;
+    margin-left: 2px;
+    height: 18px;
+}
+
+.hope-field .hope--transparent-slider .ui-slider-handle {
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    z-index: 5;
+    border-color: #aaa;
+    border-style: solid;
+    border-width: 4px 3px;
+    width: 10px;
+    height: 16px;
+    margin: 0 -5px;
+    background: none;
+    cursor: ew-resize;
+    opacity: 0.9;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hope-field .hope--transparent-slider .ui-slider-handle:before {
+    content: " ";
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    top: -3px;
+    bottom: -3px;
+    border: 2px solid #fff;
+    border-radius: 3px;
+}
+
+.hope-field .hope--transparent-offset {
+    height: 18px;
+    width: 200px;
+    background: url(../img/checkerboard.png) repeat-y center left scroll #fff;
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.hope-field .hope--transparent-text {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 30px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #999;
+}
+
+.hope-field .hope--transparent-button {
+    cursor: pointer;
+    user-select: none;
+    margin-top: 10px;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 3px 7px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.2px;
+    color: #777;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    transition: background-color .2s, border-color .2s, color .2s;
+}
+
+.hope-field .hope--transparent-active .wp-color-result {
+    background-image: url(../img/checkerboard.png);
+    background-size: 135px;
+    background-position: center left;
+    background-color: transparent !important;
+}
+
+.hope-field .hope--transparent-active .hope--transparent-button {
+    color: #fff;
+    border-color: #3ea032;
+    background-color: #4fb845;
+}
+
+.hope-field .hope--transparent-active .fa:before {
+    content: "\f205";
+}
+
+.hope-widgets>.hope-field {
+    position: relative;
+    top: -1px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 12px 15px;
+}
+
+.hope-widgets>.hope-field .hope-field {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hope-widgets>.hope-field .hope-title {
+    float: none;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.hope-widgets>.hope-field .hope-fieldset {
+    float: none;
+    width: 100%;
+}
+
+.hope-widgets .hope-field-text input {
+    width: 100%;
+}
+
+.hope-widgets .hope-field-notice .hope-notice {
+    padding: 15px;
+}
+
+.control-section .hope-widgets>.hope-field {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 10px 12px;
+}
+
+.control-section .hope-field {
+    padding: 0;
+}
+
+.control-section .hope-field .hope-title {
+    float: none;
+    width: 100%;
+    margin-bottom: 6px;
+}
+
+.control-section .hope-field .hope-title h4 {
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 600;
+    color: inherit;
+}
+
+.control-section .hope-field .hope-fieldset {
+    float: none;
+    width: 100%;
+}
+
+.control-section .hope-help {
+    top: -5px;
+    right: -5px;
+}
+
+.control-section .hope-field-select select {
+    width: 100%;
+}
+
+.control-section .hope-field-heading {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1em;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 15px;
+}
+
+.control-section .hope-field-subheading {
+    color: inherit;
+    font-size: 11px;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 10px 15px;
+}
+
+.control-section .hope-subtitle-text {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.control-section .hope-field-submessage .hope-submessage {
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 15px;
+}
+
+.control-section .hope-fieldset .hope-field-submessage .hope-submessage,
+.control-section .hope-fieldset .hope-field-heading,
+.control-section .hope-fieldset .hope-field-subheading {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.control-section .hope-field-date .hope--to {
+    margin-left: 0;
+}
+
+.control-section .hope-field-sorter ul li {
+    padding: 5px;
+}
+
+.control-section .hope-field-sorter .hope-modules {
+    float: none;
+    width: 100%;
+}
+
+.control-section .hope-field-sorter .hope-modules:first-child {
+    padding-right: 0;
+    padding-bottom: 15px;
+}
+
+.control-section .hope-field-background .hope--background-attributes {
+    flex-direction: column;
+}
+
+.control-section .hope-field-spacing input {
+    width: 90px;
+}
+
+.control-section .hope-field-border .hope--input {
+    flex: 1 50%;
+}
+
+.control-section .hope-field-border input,
+.control-section .hope-field-border select {
+    width: 100%;
+}
+
+.control-section .hope-field-spinner input {
+    width: 50px;
+}
+
+.control-section .hope-field-number .hope--wrap {
+    width: 100%;
+}
+
+.control-section .hope-field-backup .hope-export-data {
+    display: none;
+}
+
+.control-section .hope-field-fieldset .hope-fieldset-content {
+    border-color: #e5e5e5;
+}
+
+.control-section .hope-tabbed-content>.hope-field,
+.control-section .hope-sortable-content>.hope-field,
+.control-section .hope-repeater-content>.hope-field,
+.control-section .hope-fieldset-content>.hope-field,
+.control-section .hope-cloneable-content>.hope-field,
+.control-section .hope-accordion-content>.hope-field {
+    padding: 10px;
+}
+
+.control-section .hope-tabbed-content>.hope-field .hope-title,
+.control-section .hope-sortable-content>.hope-field .hope-title,
+.control-section .hope-repeater-content>.hope-field .hope-title,
+.control-section .hope-fieldset-content>.hope-field .hope-title,
+.control-section .hope-cloneable-content>.hope-field .hope-title,
+.control-section .hope-accordion-content>.hope-field .hope-title {
+    margin-bottom: 5px;
+}
+
+.control-section .hope-tabbed-content>.hope-field h4,
+.control-section .hope-sortable-content>.hope-field h4,
+.control-section .hope-repeater-content>.hope-field h4,
+.control-section .hope-fieldset-content>.hope-field h4,
+.control-section .hope-cloneable-content>.hope-field h4,
+.control-section .hope-accordion-content>.hope-field h4 {
+    font-size: 12px;
+}
+
+.control-section .hope-depend-hidden.hope-depend-on {
+    display: none !important;
+}
+
+.control-section .hope-depend-visible.hope-depend-on {
+    border-top: 0 !important;
+}
+
+.hope-taxonomy {
+    max-width: 95%;
+}
+
+.hope-taxonomy>.hope-field {
+    border-top: none !important;
+}
+
+.hope-taxonomy>.hope-field-heading {
+    font-size: 1.1em;
+    padding: 20px !important;
+    border: 1px solid #ddd;
+}
+
+.hope-taxonomy>.hope-field-subheading {
+    font-size: 12px;
+    padding: 15px !important;
+    border: 1px solid #ddd;
+}
+
+.hope-taxonomy>.hope-field-submessage .hope-submessage {
+    padding: 15px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.hope-taxonomy>.hope-field-notice {
+    background-color: transparent;
+}
+
+.hope-taxonomy .hope-section-title {
+    display: block;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.hope-taxonomy-add-fields>.hope-field {
+    padding: 8px 0;
+}
+
+.hope-taxonomy-add-fields>.hope-field>.hope-title {
+    float: none;
+    width: 100%;
+    padding: 2px 2px 4px 0;
+}
+
+.hope-taxonomy-add-fields>.hope-field>.hope-title h4 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.hope-taxonomy-add-fields>.hope-field>.hope-fieldset {
+    float: none;
+    width: 100%;
+}
+
+.hope-taxonomy-add-fields>.hope-field>.hope-fieldset>.hope-help {
+    right: -5px;
+}
+
+.hope-taxonomy-add-fields+p.submit {
+    margin-top: 0;
+}
+
+.hope-taxonomy-edit-fields>.hope-field {
+    padding: 20px 0;
+}
+
+.hope-taxonomy-edit-fields>.hope-field>.hope-title {
+    width: 200px;
+}
+
+.hope-taxonomy-edit-fields>.hope-field>.hope-title h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hope-taxonomy-edit-fields>.hope-field>.hope-fieldset {
+    width: calc(100% - 220px);
+}
+
+.hope-taxonomy-edit-fields>.hope-field>.hope-fieldset>.hope-help {
+    top: -5px;
+    right: -5px;
+}
+
+.hope-taxonomy-edit-fields>.hope-field-submessage {
+    margin: 20px 0;
+}
+
+.hope-taxonomy-edit-fields>.hope-field-subheading,
+.hope-taxonomy-edit-fields>.hope-field-heading {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+}
+
+.hope-nav-menu-options {
+    clear: both;
+    float: left;
+    width: 100%;
+}
+
+.hope-nav-menu-options>.hope-fields {
+    margin-left: -10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.hope-nav-menu-options>.hope-fields>.hope-field {
+    padding: 12px 14px 12px 12px;
+}
+
+.hope-nav-menu-options>.hope-fields>.hope-field .hope-title {
+    float: none;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.hope-nav-menu-options>.hope-fields>.hope-field .hope-fieldset {
+    float: none;
+    width: 100%;
+}
+
+.hope-nav-menu-options .hope-field-text input {
+    width: 100%;
+}
+
+.hope-nav-menu-options .hope-field-notice .hope-notice {
+    padding: 15px;
+}
+
+.hope-nav-menu-title {
+    padding: 12px 14px 12px 12px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.hope-nav-menu-title:first-child {
+    border-top: 0;
+}
+
+.hope-nav-menu-title h4 {
+    margin: 0;
+    padding: 0;
+    color: #23282d;
+}
+
+.hope-nav-menu-icon {
+    margin-right: 5px;
+}
+
+.hope-profile-options>h2>.fa {
+    padding-right: 7px;
+}
+
+.hope-profile-options>.hope-field {
+    max-width: 750px;
+    padding: 15px 0;
+    border-top: none !important;
+}
+
+.hope-profile-options>.hope-field>.hope-title {
+    width: 200px;
+}
+
+.hope-profile-options>.hope-field>.hope-title h4 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.hope-profile-options>.hope-field>.hope-fieldset {
+    width: calc(100% - 220px);
+}
+
+.hope-profile-options>.hope-field>.hope-fieldset>.hope-help {
+    top: -15px;
+    right: -5px;
+}
+
+.hope-profile-options>.hope-field-heading {
+    font-size: 1.1em;
+}
+
+.hope-profile-options>.hope-field-subheading {
+    font-size: 12px;
+}
+
+.hope-profile-options>.hope-field-subheading,
+.hope-profile-options>.hope-field-heading {
+    margin: 10px 0;
+    padding: 15px !important;
+    border: 1px solid #ddd;
+}
+
+.hope-profile-options>.hope-field-submessage {
+    margin: 20px 0;
+}
+
+.hope-profile-options>.hope-field-submessage .hope-submessage {
+    padding: 10px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.hope-profile-options>.hope-field-notice {
+    background-color: transparent;
+}
+
+.hope-modal {
+    position: fixed;
+    z-index: 100101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hope-modal.hidden {
+    display: none;
+}
+
+.hope-modal-icon {
+    z-index: 100102;
+}
+
+.hope-modal-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.hope-modal-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 100px 0;
+}
+
+.hope-modal-inner {
+    position: relative;
+    z-index: 10;
+    width: 760px;
+    height: 750px;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.hope-modal-content {
+    position: relative;
+    overflow: hidden;
+    overflow-y: auto;
+    height: 595px;
+}
+
+.hope-modal-content .hope-shortcode-button {
+    display: none;
+}
+
+.hope-modal-content .hope-field {
+    padding: 15px 30px 15px 15px;
+}
+
+.hope-modal-content a:active,
+.hope-modal-content a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.hope-modal-content h4 {
+    font-size: 13px;
+}
+
+.hope-modal-content h4 small {
+    font-style: italic;
+    font-weight: 400;
+    color: #aaa;
+}
+
+.hope-modal-title {
+    position: relative;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #ddd;
+    height: 36px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 0;
+    padding: 0 36px 0 16px;
+    border-radius: 8px 8px 0 0;
+}
+
+.hope-modal-header {
+    width: 100%;
+    padding: 14px 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid var(--hope-border-color);
+}
+
+.hope-modal-header select {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    font-size: 13px;
+    line-height: 1;
+    height: 30px;
+    min-height: 30px;
+    background-color: var(--hope-bg-color);
+}
+
+.hope-modal-close {
+    color: #666;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hope-modal-close:before {
+    content: '\EB99';
+    font-family: 'remixicon' !important;
+    vertical-align: top;
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+}
+
+.hope-modal-close:hover {
+    opacity: 0.5;
+}
+
+.hope-modal-insert-wrapper {
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+}
+
+.hope-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.hope--repeatable {
+    padding: 15px 15px 0 15px;
+}
+
+.hope--repeat-button-block {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.hope--repeat-shortcode {
+    position: relative;
+    margin-bottom: 15px;
+    border: 1px dashed #ddd;
+}
+
+.hope--repeat-shortcode:first-child .hope-repeat-remove {
+    display: none;
+}
+
+.hope--repeat-shortcode .hope-repeat-remove {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #e14d43;
+    opacity: 0.5;
+}
+
+.hope--repeat-shortcode .hope-repeat-remove:hover {
+    opacity: 0.5;
+}
+
+.hope-shortcode-single .hope-modal-inner {
+    height: 750px;
+}
+
+.hope-shortcode-single .hope-modal-content {
+    height: 652px;
+}
+
+.elementor-editor-active .hope-shortcode-button {
+    margin-left: 5px;
+}
+
+.elementor-editor-active .hope-modal .hidden {
+    display: none !important;
+}
+
+.hope-shortcode-block {
+    text-align: center;
+    padding: 14px;
+    font-size: 13px;
+    background-color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.hope-shortcode-block .components-button {
+    margin-bottom: 10px;
+}
+
+.hope-modal-icon .hope-icon-title {
+    padding: 15px 0;
+    margin: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid var(--hope-element-border-color);
+    color: #fff;
+    background: linear-gradient(90deg, #4e73dfbd 10%, #5d7bdf8a 100%);
+}
+
+.hope-modal-icon .hope-modal-header {
+    text-align: center;
+}
+
+.hope-modal-icon .hope-icon-search {
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 8px;
+    background-color: #fff;
+}
+
+@media (max-width:768px) {
+    .hope-modal-icon .hope-icon-search {
+        width: 80%;
+    }
+}
+
+.hope-modal-icon i {
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    border: 1px solid var(--hope-element-border-color);
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 12%);
+    transition: all .2s linear;
+}
+
+.hope-modal-icon i:hover {
+    color: #fff;
+    border-color: var(--hope-element-border-color);
+    background-color: #4e73df;
+}
+
+.hope-modal-icon .hope-modal-content {
+    padding: 10px;
+    height: 618px;
+}
+
+.hope-modal-icon .hope-error-text {
+    padding: 10px;
+}
+
+.hope-modal-loading {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.hope-loading {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+}
+
+.hope-loading:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    content: "";
+    margin-top: -2px;
+    margin-left: -2px;
+    background-color: white;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: vamLoader;
+    border-radius: 4px;
+}
+
+@keyframes vamLoader {
+    0% {
+        transform: rotate(0deg) translateX(-6px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translateX(-6px) rotate(-360deg);
+    }
+}
+
+#hope-modal-link #link-selector {
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px;
+    position: absolute;
+    top: calc(2.15384615em + 16px);
+    left: 0;
+    right: 0;
+    bottom: calc(2.15384615em + 19px);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+#hope-modal-link #link-options {
+    padding: 8px 0 12px;
+}
+
+#hope-modal-link p.howto {
+    color: #646970;
+    display: block;
+    margin: 3px 0;
+    padding-left: 30px;
+}
+
+#hope-modal-link #link-options label span,
+#hope-modal-link #search-panel label span.search-label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    padding-right: 5px;
+    max-width: 24%;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+#hope-modal-link label {
+    display: block;
+}
+
+#hope-modal-link label input[type=text] {
+    margin-top: 5px;
+    width: 70%;
+    color: #2c3338;
+    background-color: #f6f7f7;
+}
+
+#hope-modal-link .link-target label {
+    padding-left: 120px;
+    width: fit-content;
+}
+
+#hope-modal-link .hope-modal-inner {
+    width: 500px;
+    height: 650px;
+}
+
+#hope-modal-link .query-results {
+    border: 1px solid #f3f3f3;
+    border-radius: 0;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 7%);
+    transition: .05s all ease-in-out;
+    margin: 0 0 12px;
+    background: #fff;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+#hope-modal-link .submitbox {
+    padding: 8px 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    overflow: auto;
+    max-height: 290px;
+}
+
+#hope-modal-link ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#hope-modal-link li {
+    clear: both;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f1;
+    color: #2c3338;
+    padding: 4px 6px 4px 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f6f7f7;
+}
+
+#hope-modal-link .item-title {
+    display: inline-block;
+    width: calc(100% - 68px);
+    word-wrap: break-word;
+}
+
+#hope-modal-link .item-info {
+    text-transform: uppercase;
+    color: #646970;
+    font-size: 12px;
+    position: relative;
+}
+
+#hope-modal-link #link-cancel {
+    line-height: 1.92307692;
+    float: left;
+}
+
+#hope-modal-link #link-update {
+    line-height: 1.76923076;
+    float: right;
+}
+
+#hope-modal-link #link-submit {
+    float: right;
+}
+
+.hope-subtitle-text {
+    margin-top: 6px;
+    font-weight: 400;
+    color: #999;
+    font-size: .9em;
+}
+
+.hope-desc-text {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    font-weight: 400;
+    color: #999;
+}
+
+@media (max-width:768px) {
+    .hope-desc-text {
+        font-size: 13px;
+    }
+}
+
+.hope-error-text {
+    margin-top: 6px;
+    color: #d02c21;
+}
+
+.hope-before-text {
+    margin-bottom: 6px;
+}
+
+.hope-after-text {
+    margin-top: 6px;
+}
+
+.hope-metabox-hide {
+    display: none !important;
+}
+
+.hope-metabox-show {
+    display: block !important;
+}
+
+.hope-depend-hidden.hope-depend-on {
+    display: none;
+}
+
+.hope-depend-visible.hope-depend-on {
+    display: block;
+    opacity: .75;
+    filter: grayscale(1);
+    user-select: none;
+}
+
+.hope-depend-visible.hope-depend-on .clear:before {
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #eee;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: .25;
+    z-index: 10;
+    visibility: visible;
+}
+
+.hope-warning-primary {
+    color: #fff !important;
+    border-color: #dc3545 !important;
+    background: #dc3545 !important;
+}
+
+.hope-warning-primary:hover,
+.hope-warning-primary:focus {
+    border-color: #bd2130 !important;
+    background: #bd2130 !important;
+}
+
+.hope-warning-primary:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px #bd2130 !important;
+}
+
+.hope-warning-primary:active {
+    border-color: #bd2130 !important;
+    background: #bd2130 !important;
+}
+
+.hope-form-result {
+    display: none;
+    float: left;
+    padding: 0 8px;
+    margin-right: 4px;
+    font-size: 11px;
+    line-height: 30px;
+    user-select: none;
+    border-radius: 2px;
+}
+
+.hope-form-show {
+    display: block;
+}
+
+.hope-form-success {
+    color: #fff;
+    background-color: #46b450;
+}
+
+.hope-form-warning {
+    color: #8a6d3b;
+    background-color: #faebcc;
+}
+
+.hope-label-error {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    font-size: 10px;
+    line-height: 10px;
+    height: 10px;
+    width: 10px;
+    padding: 1px;
+    font-style: normal;
+    text-align: center;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #e10000;
+    border-radius: 2px;
+}
+
+.hope-no-option {
+    padding: 30px;
+}
+
+.hope-input-number {
+    -moz-appearance: textfield;
+}
+
+.hope-input-number::-webkit-inner-spin-button,
+.hope-input-number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.hope-fa5-shims .hope .fas,
+.hope-fa5-shims .hope .far,
+.hope-fa5-shims .hope .fab {
+    font-family: "FontAwesome";
+    font-style: normal;
+}
+
+.hope-welcome-wrap {
+    position: relative;
+    margin: 25px 40px 0 20px;
+    font-size: 15px;
+    max-width: 1200px;
+}
+
+.hope-welcome-wrap p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.hope-welcome-wrap h1 {
+    margin: 0.2em 200px 0 0;
+    padding: 0;
+    color: #32373c;
+    line-height: 1.2em;
+    font-size: 2.8em;
+    font-weight: 400;
+}
+
+.hope-welcome-wrap .hope-logo {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    height: 160px;
+    width: 140px;
+    background-image: linear-gradient(45deg, #2d67cb, #ad19f3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25), inset 0 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+.hope-welcome-wrap .hope-logo .hope--effects i {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.15);
+    transform: rotate(-45deg);
+}
+
+.hope-welcome-wrap .hope-logo .hope--effects i:nth-child(1) {
+    bottom: -20px;
+    right: -70px;
+}
+
+.hope-welcome-wrap .hope-logo .hope--effects i:nth-child(2) {
+    bottom: -35px;
+    right: -80px;
+}
+
+.hope-welcome-wrap .hope-logo .hope--effects i:nth-child(3) {
+    bottom: -50px;
+    right: -90px;
+}
+
+.hope-welcome-wrap .hope-logo .hope--effects i:nth-child(4) {
+    bottom: -65px;
+    right: -100px;
+}
+
+.hope-welcome-wrap .hope-logo .hope--text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.hope-welcome-wrap .hope-logo .hope--version {
+    top: auto;
+    left: auto;
+    right: 8px;
+    bottom: 4px;
+    font-size: 11px;
+    text-transform: lowercase;
+}
+
+.hope-welcome-wrap .hope-about-text {
+    font-weight: 400;
+    line-height: 1.6em;
+    font-size: 19px;
+    margin: 1em 200px 1em 0;
+    color: #555d66;
+}
+
+.hope-welcome-wrap .hope-demo-button {
+    margin: 1em 200px 2em 0;
+}
+
+.hope-welcome-wrap .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.hope-welcome-wrap ul {
+    list-style-type: disc;
+    padding-left: 15px;
+}
+
+.hope-welcome-wrap .hope--col {
+    float: left;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.hope-welcome-wrap .hope--col-2 {
+    width: 50%;
+}
+
+.hope-welcome-wrap .hope--col-3 {
+    width: 33.333%;
+}
+
+.hope-welcome-wrap .hope--col-4 {
+    width: 25%;
+}
+
+.hope-welcome-wrap .hope--col-5 {
+    width: 20%;
+}
+
+.hope-welcome-wrap .hope--col-last {
+    padding-right: 0;
+}
+
+.hope-welcome-wrap .hope--col-upgrade {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+.hope--table-compare thead td,
+.hope--table-compare tfoot td {
+    text-align: center;
+}
+
+.hope--table-compare td {
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+.hope--table-compare td:first-child {
+    text-align: left;
+}
+
+.hope--table-compare tfoot td {
+    padding: 15px 0;
+}
+
+.hope--table-compare .fa {
+    font-size: 18px;
+}
+
+.hope--table-compare .fa-check-circle {
+    color: #46b450;
+}
+
+.hope--table-compare .fa-times-circle {
+    color: #dc3232;
+}
+
+.hope-welcome-cols {
+    clear: both;
+    margin: 20px 0;
+    background-color: var(--hope-bg-color);
+    padding: 0 0;
+    border-radius: 2px;
+    border: 1px solid #e5e5e5;
+}
+
+.hope-welcome-cols .hope--col {
+    width: 33.333%;
+    float: left;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 200px;
+    border-right: 1px solid #e5e5e5;
+}
+
+.hope-welcome-cols .hope--left,
+.hope-welcome-cols .hope--block {
+    float: left;
+    width: 20%;
+    padding: 0 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.hope-welcome-cols .hope--block {
+    width: 80%;
+}
+
+.hope-welcome-cols .hope--col-first {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.hope-welcome-cols .hope--last {
+    border-right: none;
+}
+
+.hope-welcome-cols .hope--space {
+    height: 20px;
+}
+
+.hope-welcome-cols .hope--icon {
+    display: inline-block;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 30px;
+}
+
+.hope-welcome-cols .hope--active {
+    background-color: #64bd63;
+}
+
+.hope-welcome-cols .hope--deactive {
+    background-color: #e14d43;
+}
+
+.hope-welcome-cols .hope--title {
+    font-weight: bold;
+    display: block;
+}
+
+.hope-welcome-cols p:last-child {
+    margin-bottom: 0;
+}
+
+.hope-features-cols .hope--key-features {
+    width: 30%;
+}
+
+.hope-features-cols .hope--available-fields {
+    width: 70%;
+}
+
+.hope-code-block {
+    margin: 20px 0;
+    padding: 5px 20px;
+    background-color: var(--hope-bg-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.hope-code-block pre {
+    font-size: 13px;
+    color: #0073aa;
+}
+
+.hope-code-block pre span {
+    color: #999;
+}
+
+.hope--table-fields td {
+    font-size: 14px;
+}
+
+.hope--upgrade a {
+    color: #5cb85c;
+    font-weight: bold;
+}
+
+.hope--upgrade a:focus,
+.hope--upgrade a:hover {
+    color: #4aa14a;
+    outline: none;
+    box-shadow: none;
+}
+
+@media only screen and (max-width:782px) {
+    .hope-welcome-cols .hope--col {
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .hope-features-cols .hope--key-features {
+        width: 100%;
+    }
+
+    .hope-features-cols .hope--available-fields {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .hope-metabox .hope-field .hope-title {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hope-metabox .hope-field .hope-fieldset {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:782px) {
+    .hope-header-inner {
+        text-align: center;
+    }
+
+    .hope-header-inner h1 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hope-form-result {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .hope-search,
+    .hope-header-right,
+    .hope-header-left {
+        width: 100%;
+    }
+
+    .hope-search {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .hope-footer {
+        text-align: center;
+    }
+
+    .hope-buttons {
+        float: none;
+    }
+
+    .hope-copyright {
+        float: none;
+        margin-top: 10px;
+    }
+
+    .hope-nav,
+    .hope-expand-all,
+    .hope-reset-section,
+    .hope-nav-background {
+        display: none !important;
+    }
+
+    .hope-content {
+        margin-left: 0;
+    }
+
+    .hope-field .hope-title {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hope-field .hope-fieldset {
+        float: none;
+        width: 100%;
+    }
+
+    .hope-field-color .button.hope-picker-clear {
+        padding: 0 8px;
+        line-height: 2.14285714;
+        min-height: 32px;
+    }
+
+    .hope-modal-inner {
+        width: 350px;
+        height: 400px;
+        border-radius: 8px;
+    }
+
+    .hope-modal-content {
+        height: 237px;
+    }
+
+    .hope-icon-dialog .hope-modal-inner {
+        width: 305px;
+        height: 380px;
+    }
+
+    .hope-icon-dialog .hope-modal-content {
+        height: 267px;
+    }
+
+    .hope-modal-icon .hope-modal-inner {
+        width: 330px;
+        height: 500px;
+    }
+
+    #hope-modal-link .hope-modal-inner {
+        width: 330px;
+        height: 500px;
+    }
+
+    #hope-modal-link .link-target label {
+        padding-left: 80px;
+    }
+
+    .hope-modal-icon .hope-modal-content {
+        height: 370px;
+    }
+
+    .hope-profile-options>.hope-field>.hope-title,
+    .hope-taxonomy-edit-fields>.hope-field>.hope-title {
+        float: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .hope-profile-options>.hope-field>.hope-fieldset,
+    .hope-taxonomy-edit-fields>.hope-field>.hope-fieldset {
+        float: none;
+        width: 100%;
+    }
+
+    .hope-nav-menu-options>.hope-fields {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+
+    .hope-nav-menu-options>.hope-fields>.hope-field {
+        padding: 10px;
+    }
+}
+
+.chosen-container {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 13px;
+    user-select: none;
+}
+
+.chosen-container * {
+    box-sizing: border-box;
+}
+
+.chosen-container .chosen-drop {
+    position: absolute;
+    top: 100%;
+    z-index: 10;
+    width: 100%;
+    border: 1px solid var(--hope-border-color);
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(100% 100%);
+    border-radius: 0 0 5px 5px;
+}
+
+.chosen-container.chosen-with-drop .chosen-drop {
+    clip: auto;
+    clip-path: none;
+}
+
+.chosen-container a {
+    cursor: pointer;
+}
+
+.chosen-container .search-choice .group-name,
+.chosen-container .chosen-single .group-name {
+    margin-right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    color: #999999;
+}
+
+.chosen-container .search-choice .group-name:after,
+.chosen-container .chosen-single .group-name:after {
+    content: ":";
+    padding-left: 2px;
+    vertical-align: top;
+}
+
+.chosen-container-single .chosen-single {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 0 0 0 8px;
+    height: 25px;
+    border: 1px solid var(--hope-element-border-color);
+    border-radius: 5px;
+    background-color: var(--hope-bg-color);
+    background-image: linear-gradient(135deg, #f6f6f6 10%, #f4f4f4 100%) !important;
+    background-clip: padding-box;
+    box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 24px;
+}
+
+.chosen-container-single .chosen-single span {
+    display: block;
+    overflow: hidden;
+    margin-right: 26px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chosen-container-single .chosen-single-with-deselect span {
+    margin-right: 38px;
+}
+
+.chosen-container-single .chosen-single abbr {
+    position: absolute;
+    top: 6px;
+    right: 26px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    font-size: 1px;
+}
+
+.chosen-container-single .chosen-single div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 18px;
+    height: 100%;
+}
+
+.chosen-container-single .chosen-single div b {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.chosen-container-single .chosen-search {
+    position: relative;
+    z-index: 1010;
+    margin: 0;
+    padding: 3px 4px;
+    white-space: nowrap;
+}
+
+.chosen-container-single .chosen-search input[type="text"] {
+    margin: 1px 0;
+    padding: 4px 20px 4px 5px;
+    width: 100%;
+    height: auto;
+    outline: 0;
+    border: 1px solid #aaa;
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+}
+
+.chosen-container-single .chosen-drop {
+    margin-top: -1px;
+    border-radius: 0 0 4px 4px;
+    background-clip: padding-box;
+}
+
+.chosen-container-single.chosen-container-single-nosearch .chosen-search {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(100% 100%);
+}
+
+.chosen-container .chosen-results {
+    color: #444;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 4px 4px 0;
+    padding: 0 0 0 4px;
+    max-height: 240px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chosen-container .chosen-results li {
+    display: none;
+    margin: 0;
+    padding: 5px 6px;
+    list-style: none;
+    line-height: 15px;
+    word-wrap: break-word;
+    -webkit-touch-callout: none;
+}
+
+.chosen-container .chosen-results li.active-result {
+    display: list-item;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.chosen-container .chosen-results li.disabled-result {
+    display: list-item;
+    color: #ccc;
+    cursor: default;
+}
+
+.chosen-container .chosen-results li.highlighted {
+    background-color: #4e73df;
+    background-image: linear-gradient(135deg, #4e73df 10%, #3b87de 100%);
+    color: #fff;
+}
+
+.chosen-container .chosen-results li.no-results {
+    color: #777;
+    display: list-item;
+    background: #f4f4f4;
+}
+
+.chosen-container .chosen-results li.group-result {
+    display: list-item;
+    font-weight: bold;
+    cursor: default;
+}
+
+.chosen-container .chosen-results li.group-option {
+    padding-left: 15px;
+}
+
+.chosen-container .chosen-results li em {
+    font-style: normal;
+    text-decoration: underline;
+}
+
+.chosen-container-multi .chosen-choices {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 3px;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--hope-element-border-color);
+    appearance: none;
+    background-color: var(--hope-bg-color);
+    cursor: text;
+    border-radius: 5px;
+}
+
+.chosen-container-multi .chosen-choices li {
+    float: left;
+    list-style: none;
+}
+
+.chosen-container-multi .chosen-choices li.search-field {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    padding: 0;
+    outline: 0;
+    border: 0 !important;
+    background: 0 0 !important;
+    box-shadow: none;
+    color: var(--hope-color);
+    font-size: 100%;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+    height: auto;
+    min-height: 28px;
+    width: 200px;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    position: relative;
+    margin: 3px 5px 3px 0;
+    padding: 3px;
+    max-width: 100%;
+    border-radius: 5px;
+    line-height: unset;
+    cursor: default;
+    background: #4e73df !important;
+    color: #fff !important;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+}
+
+.chosen-container-multi .chosen-choices li.search-choice span {
+    word-wrap: break-word;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice-disabled {
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    background-color: #e4e4e4;
+    background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
+    color: #666;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice-focus {
+    background: #d4d4d4;
+}
+
+.chosen-container-multi .chosen-results {
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.chosen-container-multi .chosen-drop .result-selected {
+    display: list-item;
+    color: #ccc;
+    cursor: default;
+}
+
+.chosen-container-active .chosen-single {
+    border: 1px solid #5897fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single {
+    border: 1px solid var(--hope-border-color);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-image: linear-gradient(#eee 20%, #fff 80%);
+    box-shadow: 0 1px 0 #fff inset;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-left: none;
+    background: transparent;
+}
+
+.chosen-container-active .chosen-choices {
+    border: 1px solid #5897fb;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.chosen-container-active .chosen-choices li.search-field input[type="text"] {
+    color: var(--hope-color);
+}
+
+.chosen-disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+}
+
+.chosen-disabled .chosen-single {
+    cursor: default;
+}
+
+.chosen-disabled .chosen-choices .search-choice .search-choice-close {
+    cursor: default;
+}
+
+.chosen-rtl {
+    text-align: right;
+}
+
+.chosen-rtl .chosen-single {
+    overflow: visible;
+    padding: 0 8px 0 0;
+}
+
+.chosen-rtl .chosen-single span {
+    margin-right: 0;
+    margin-left: 26px;
+    direction: rtl;
+}
+
+.chosen-rtl .chosen-single-with-deselect span {
+    margin-left: 38px;
+}
+
+.chosen-rtl .chosen-single div {
+    right: auto;
+    left: 3px;
+}
+
+.chosen-rtl .chosen-single abbr {
+    right: auto;
+    left: 26px;
+}
+
+.chosen-rtl .chosen-choices li {
+    float: right;
+}
+
+.chosen-rtl .chosen-choices li.search-field input[type="text"] {
+    direction: rtl;
+}
+
+.chosen-rtl .chosen-choices li.search-choice {
+    margin: 3px 5px 3px 0;
+    padding: 3px 5px 3px 19px;
+}
+
+.chosen-rtl .chosen-choices li.search-choice .search-choice-close {
+    right: auto;
+    left: 4px;
+}
+
+.chosen-rtl.chosen-container-single .chosen-results {
+    margin: 0 0 4px 4px;
+    padding: 0 4px 0 0;
+}
+
+.chosen-rtl .chosen-results li.group-option {
+    padding-right: 15px;
+    padding-left: 0;
+}
+
+.chosen-rtl.chosen-container-active.chosen-with-drop .chosen-single div {
+    border-right: none;
+}
+
+.chosen-rtl .chosen-search input[type="text"] {
+    padding: 4px 5px 4px 20px;
+    direction: rtl;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hope-fixed-body {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    background: transparent;
+    opacity: 0;
+    transition: .3s;
+    z-index: 102;
+}
+
+@media (max-width:768px) {
+    .hope-fixed-body {
+        z-index: 1;
+    }
+}
+
+.hope-nav.hope-nav-options.show+.hope-fixed-body {
+    visibility: unset;
+    opacity: 1;
+}
+
+.hope-theme-light .hope-container {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(82 82 82 / 10%);
+}
+
+.hope-header-inner h1 {
+    color: #fff !important;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.hope-section-title h3 {
+    color: #ff6699;
+}
+
+.control-section .hope-field .hope-title h4,
+.hope-field .hope-title h4 {
+    color: #4e73df;
+}
+
+.hope-section-title {
+    background: #f1f2f3;
+}
+
+.hope-theme-light .hope-nav-background {
+    background-color: var(--hope-bg-color);
+    border-right: 1px solid var(--hope-border-color);
+}
+
+.hope-form-success,
+.hope-form-warning,
+.hope-theme-light .hope-expand-all,
+.hope-theme-light .hope-search input {
+    color: #fff;
+    background-color: rgb(219 219 219 / 30%);
+    border-radius: 4px;
+}
+
+.hope-search input::placeholder {
+    color: #fff;
+}
+
+.hope-theme-light .hope-search input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.hope-theme-light .hope-nav ul li a {
+    background-color: var(--hope-bg-color);
+    transition: .2s;
+    border-right: 1px solid var(--hope-border-color);
+}
+
+@media (max-width:768px) {
+    .hope-theme-light .hope-nav ul li a {
+        border-right: none;
+    }
+}
+
+.hope-theme-light .hope-nav ul li .hope-active,
+.hope-theme-light .hope-nav ul li a:hover {
+    color: #4e73df;
+    background-color: var(--hope-bg-color3);
+    transition: .2s;
+}
+
+.hope-theme-light .hope-nav>ul>li:last-child>a {
+    border-bottom: none;
+}
+
+.hope-field-switcher .hope--switcher {
+    border-radius: 100px;
+    width: 42px;
+    height: 22px;
+    transition: .3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.hope-field-switcher .hope--ball {
+    width: 18px;
+    height: 18px;
+    border-radius: 100px;
+    top: 2px;
+    left: 2px;
+    transition: .3s;
+}
+
+.hope-field-switcher .hope--active .hope--ball {
+    left: 100%;
+    margin-left: -28px;
+}
+
+.hope-field-switcher .hope--active .hope--ball {
+    margin-left: -20px;
+}
+
+.hope-theme-light .hope-expand-all:hover {
+    color: #fff;
+    opacity: .8;
+}
+
+.hope-form-warning {
+    background-image: linear-gradient(135deg, #ed8620 10%, #ea5e1c 100%) !important;
+    box-shadow: -1px 2px 10px 0 rgba(203, 96, 18, 0.3);
+}
+
+.hope-field-image_select .hope--active figure,
+.hope-field-palette .hope--active {
+    border-color: #4e73df;
+}
+
+.hope-field-image_select figure:before,
+.hope-field-palette .hope--palette:before {
+    right: 0;
+    left: auto;
+    font-weight: 400;
+    background-color: #4e73df;
+    border-radius: 0 0 0 4px;
+}
+
+.hope-depend-hidden,
+.hope-field-group .hope-cloneable-content,
+.hope-section,
+.hope-tooltip {
+    -webkit-animation: fade .5s;
+    animation: fade .5s;
+}
+
+.hope-fieldset input[type=radio],
+.hope-fieldset input[type=checkbox] {
+    flex-shrink: 0;
+    width: 1.313em;
+    height: 1.313em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    float: left;
+    margin-left: 0;
+    margin-right: 5px;
+    background-color: transparent;
+    background-image: var(--check-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1.5px solid var(--hope-element-border-color);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    transition: all .2s linear;
+}
+
+.hope-fieldset input:checked,
+.hope-fieldset input.hope_checked {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+.hope-fieldset input[type=radio] {
+    border-radius: 50%;
+}
+
+.hope-fieldset input[type=radio]:checked[type=radio],
+.hope-fieldset input[type=radio].hope_checked {
+    --check-bg-image: url('../img/radio.svg');
+}
+
+.hope-fieldset input[type=checkbox] {
+    border-radius: 0.25em;
+}
+
+.hope-fieldset input:checked[type=checkbox],
+.hope-fieldset input[type=checkbox].hope_checked {
+    --check-bg-image: url('../img/checkbox.svg');
+}
+
+.hope-field.sortable-only .hope-sortable .hope-sortable-item .hope-sortable-content .hope-title {
+    text-align: center;
+    width: 100%;
+}
+
+.hope-field.sortable-only .hope-sortable .hope-sortable-item .hope-sortable-content>.hope-field .hope-checkbox {
+    display: none;
+}
+
+@media (max-width:782px) {
+    .hope-nav.hope-nav-options>ul {
+        margin: 50px 0 100px 0;
+    }
+
+    .hope-nav.hope-nav-options>ul.no-header {
+        margin-top: 0;
+    }
+
+    .hope-nav.hope-nav-options {
+        display: block !important;
+        position: fixed;
+        width: 150px;
+        right: -200px;
+        top: 0;
+        z-index: 2;
+        bottom: 0;
+        height: 100%;
+        padding: 10px;
+        background: var(--hope-bg-color);
+        transition: .3s;
+        overflow-y: scroll;
+        box-shadow: -5px 0 15px 0 rgb(0 0 0 / 6%);
+    }
+
+    .hope-nav.hope-nav-options.show {
+        right: -2px;
+    }
+
+    .hope-menu {
+        display: inline-block;
+        padding: 5px 9px;
+        text-align: center;
+        height: 30px;
+        font-size: 16px;
+        line-height: 1.2;
+        border-radius: 5px;
+        min-width: 50px;
+        color: #fff;
+        margin: 0 2px;
+        text-decoration: none;
+        background-image: linear-gradient(135deg, #66c1b6 10%, #f6c23e 100%) !important;
+        box-shadow: -1px 2px 10px 0 rgb(125 8 8 / 30%);
+        transition: color .15s linear;
+    }
+
+    .hope-menu:hover {
+        color: #fff;
+        background-image: linear-gradient(135deg, #5fb0a7 10%, #e0ae3a 100%) !important;
+        text-decoration: none;
+    }
+}
+
+.clear {
+    clear: both;
+    height: 1px;
+    font-size: 1px
+}

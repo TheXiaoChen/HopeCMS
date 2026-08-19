@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pickr 颜色选择器示例</title>
+  <!-- 引用已有样式 -->
+
+    <link href="../css/classic.min.css" rel="stylesheet"/>
+    <link href="../css/monolith.min.css" rel="stylesheet"/>
+    <link href="../css/nano.min.css" rel="stylesheet"/>
+  <style>
+    body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:20px;background:#f7f7f8}
+    .demo-row{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+    .swatch{width:36px;height:36px;border-radius:6px;border:1px solid #ddd}
+  </style>
+</head>
+<body>
+  <h2>Pickr 颜色选择器（示例）</h2>
+
+  <div class="demo-row">
+    <!-- 用作触发器的按钮（Pickr 会把其替换） -->
+    <button id="pickr-button" class="pickr" title="打开颜色选择器"></button>
+    <input id="color-value" type="text" placeholder="#RRGGBB 或 rgba(...)" style="width:220px;padding:6px;border-radius:4px;border:1px solid #ccc">
+    <div id="color-swatch" class="swatch"></div>
+  </div>
+
+  <div class="demo-row">
+    <label>内联展示：</label>
+    <div id="pickr-inline"></div>
+  </div>
+
+  <!-- 引用已有脚本 -->
+  <script src="pickr.es5.min.js"></script>
+  <script>
+    // 创建一个悬浮触发器（默认 theme = classic）
+    const pickr = Pickr.create({
+      el: '#pickr-button',
+      theme: 'classic', // or 'monolith', 'nano'
+      default: '#3498db',
+      components: {
+        // 只启用需要的组件以保持界面简洁
+        
+        preview: true,
+        opacity: true,
+        hue: true,
+        interaction: {
+          hex: true,
+          rgba: true,
+          hsla: true,
+          input: true,
+          clear: true,
+          save: true
+        }
+      }
+    });
+
+    // 监听颜色变更并更新页面元素
+    pickr.on('change', (color, source, instance) => {
+      const c = color.toHEXA().toString();
+      document.getElementById('color-value').value = c;
+      document.getElementById('color-swatch').style.background = color.toRGBA().toString();
+    });
+
+    pickr.on('save', (color, instance) => {
+      // 保存并关闭（Pickr 自动处理），这里可以做额外操作
+      console.log('保存颜色:', color ? color.toHEXA().toString() : null);
+    });
+
+    // 内联示例（直接在页面显示）
+    const pickrInline = Pickr.create({
+      el: '#pickr-inline',
+      inline: true,
+      default: '#e74c3c',
+      components: { preview: true, opacity: true, hue: true, interaction: { input: true, save: true } }
+    });
+
+    pickrInline.on('change', (color) => {
+      document.getElementById('color-value').value = color.toHEXA().toString();
+      document.getElementById('color-swatch').style.background = color.toRGBA().toString();
+    });
+  </script>
+</body>
+</html>
