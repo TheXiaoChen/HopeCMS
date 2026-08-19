@@ -90,9 +90,9 @@ git clone <repo-url> .
 
 ## 内置主题与插件
 
-**主题：** `default`（示例）、`hopecms`（官方）、`Shop`、`noble`、`reshub`、`cinema` 等
+**主题：** `default`（示例）
 
-**插件：** `tips`（示例）、`apply`（应用中心）、`oauth`、`migrate`、`music`、`video`、`yuncai` 等
+**插件：** `tips`（示例）
 
 业务扩展请放在 `content/plugin/` 与 `content/theme/`，避免直接修改 `system/` 核心文件。
 
