@@ -1,138 +1,123 @@
 # Hope CMS
 
-<p align="center">
-  <img src="https://img.shields.io/badge/PHP-7.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 7.0+" />
-  <img src="https://img.shields.io/badge/MySQL-5.7%2B-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL 5.7+" />
-  <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge" alt="Apache 2.0" />
-</p>
+**Hope CMS**（希望 CMS）是一款面向中文站长的轻量开源 CMS：博客写作、主题与插件扩展、支付能力开箱可用，适合个人站、工作室站与付费资源站。
 
-Hope CMS 是一个基于 PHP 的轻量内容管理系统，适合用于博客、资讯站、企业内容站、知识库与个人站点的快速搭建。它集成了文章管理、分类标签、用户中心、后台管理、主题扩展和插件扩展能力，适合进行快速上线与二次开发。
+[![PHP](https://img.shields.io/badge/PHP-7.0%2B-777BB4?logo=php&logoColor=white)](https://www.php.net/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Version](https://img.shields.io/badge/Version-1.0.2-green.svg)](https://www.hopecms.cn)
 
-## 项目简介
+---
 
-该项目采用原生 PHP 构建，结构清晰，便于理解与扩展，适合用于内容型站点和轻量 CMS 场景。系统具备常见运营型内容站所需的基础能力，包括文章发布、分类管理、用户注册、后台配置和主题插件化扩展。
+## 链接
 
-## 核心功能
+| | 地址 |
+| --- | --- |
+| **官网** | [https://www.hopecms.cn](https://www.hopecms.cn) |
+| **在线演示** | [https://demo.hopecms.cn](https://demo.hopecms.cn) |
 
-- 文章与页面管理
-- 分类、标签和菜单管理
-- 用户注册、登录及个人中心
-- 评论与后台运营管理
-- 主题切换与前台模板定制
-- 插件扩展与模块化开发
-- 上传资源管理
-- 日志、缓存和站点配置管理
-- 多语言资源结构支持
+> 请仅从 [www.hopecms.cn](https://www.hopecms.cn) 下载安装包，其他来源存在安全风险。
 
-## 技术栈
+---
 
-- PHP 7.0+
-- MySQL
-- HTML / CSS / JavaScript
-- 原生 PHP MVC / 模块化设计
-- 前后端资源分离的主题与后台结构
+## 功能特性
 
-## 项目结构
-
-```text
-HopeCMS/
-├── admin.php              # 后台入口
-├── index.php              # 前台入口
-├── install.php            # 安装程序
-├── nginx.htaccess        # Nginx 伪静态规则
-├── README.md              # 项目说明
-├── favicon.ico            # 网站图标
-├── content/               # 前台内容资源
-│   ├── admin/             # 后台资源文件
-│   ├── lang/              # 多语言包
-│   ├── plugin/            # 插件目录
-│   ├── theme/             # 主题目录
-│   ├── upload/            # 上传目录
-│   └── ...
-├── system/                # 核心程序目录
-│   ├── admin/             # 后台控制器
-│   ├── app/               # 应用逻辑
-│   ├── bootstrap/         # 启动配置
-│   ├── install/           # 安装 SQL
-│   ├── lib/               # 公共类库
-│   ├── options/           # 配置项与字段
-│   └── ...
-├── logs/                  # 日志目录
-└── ...
-```
-
-## 运行环境
-
-- PHP 7.0 及以上，推荐 PHP 8.x
-- MySQL 5.7+
-- 扩展支持：mysqli 或 PDO
-- 需有可写权限的目录：
-  - system/config.php
-  - content/cache
-  - content/upload
-  - logs
-
-## 快速开始
-
-### 1. 部署项目
-
-将项目放入 Web 服务器目录，例如：
-
-```bash
-/var/www/html
-```
-
-### 2. 创建数据库
-
-在 MySQL 中创建数据库，并确保数据库用户具备建表和写入权限。
-
-### 3. 访问安装入口
-
-```text
-http://localhost/install.php
-```
-
-根据提示完成数据库配置与安装步骤。
-
-### 4. 登录后台
-
-安装完成后，访问：
-
-```text
-http://localhost/admin.php
-```
-
-登录后台后即可完成站点配置、内容发布、主题切换和插件管理。
-
-## 默认入口
-
-- 前台入口：index.php
-- 后台入口：admin.php
-- 安装入口：install.php
+- **Markdown 写作** — Editor.md 编辑器，支持分类 / 标签 / 封面 / 别名 / 置顶 / 阅读密码
+- **多用户与权限** — 管理员 / 编辑 / 作者 / 访客，后台模块级权限控制
+- **SEO 友好** — 站点 / 文章 / 分类 / 标签 TDK，动态与伪静态链接
+- **REST API** — API Key 鉴权与访问限流
+- **主题与插件** — 挂载点扩展，示例主题 `default`、示例插件 `tips` 可直接对照学习
+- **媒体与下载** — 附件管理、个人媒体库、前台资源下载
+- **用户与支付** — 个人中心、余额充值、邀请奖励，微信 / 支付宝等在线支付
+- **AI 工作台** — 后台 AI 助手与创作辅助
+- **运维工具** — 备份导入、更新缓存、SMTP、多语言后台
 
 ## 适用场景
 
-- 个人博客
-- 技术资讯站
-- 企业官网内容系统
-- 知识库 / 文档站
-- 轻量 CMS 二次开发基础项目
+- 个人博客 / 内容站
+- 付费下载 / 会员资源站
+- 应用分发 / 插件主题商店
 
-## 开发建议
+## 环境要求
 
-- 推荐使用 Nginx 或 Apache
-- 优先在 PHP 8.x 环境中运行
-- 启用 mbstring、pdo_mysql、json 等常见扩展
-- 为 uploads、logs、cache 等目录配置合理权限
+| 项目 | 要求 |
+| --- | --- |
+| PHP | 7.0+（推荐 8.0+） |
+| 数据库 | MySQL 5.6+ / MariaDB 10.3+（`mysqli` 或 `pdo_mysql`） |
+| Web 服务器 | Apache / Nginx（IIS 需 URL Rewrite） |
+| 建议扩展 | `mbstring`、`json`、`curl`、`gd` 或 `imagick`、`openssl` |
 
-## 说明
+以下目录需可写：`content/upload/`、`content/cache/`、`logs/`
 
-这是一套适合二次开发和深度定制的轻量级 CMS。它适合用于快速搭建内容站点，并在此基础上延伸会员系统、SEO 优化、支付模块、AI 助手或内容审核等高级能力。
+## 快速安装
 
-## 贡献
+```bash
+# 1. 克隆本仓库，或从官网下载安装包并解压到网站根目录
+git clone <repo-url> .
 
-欢迎提交 Issue 和 Pull Request，帮助项目不断完善。
+# 2. 确保 content/upload、content/cache、logs 目录可写
+
+# 3. 浏览器访问安装向导
+# http://你的域名/install.php
+```
+
+安装步骤：
+
+1. 访问 `install.php`，填写数据库信息与管理员账号
+2. 安装完成后**删除或重命名** `install.php`
+3. 登录后台（默认入口 `admin.php`，建议重命名为不易猜测的文件名）
+4. 启用主题与插件，执行 **设置 → 更新缓存**
+
+已有站点升级请勿重跑安装向导，详见 [升级说明](http://www.hopecms.cn/docs.html#upgrade)。
+
+## 目录结构
+
+```
+├── admin.php              # 后台入口（建议重命名）
+├── install.php            # 安装向导（安装后删除）
+├── content/
+│   ├── admin/             # 后台静态资源
+│   ├── cache/             # 缓存
+│   ├── plugin/            # 插件目录
+│   ├── theme/             # 主题目录
+│   └── upload/            # 上传文件
+├── system/
+│   ├── admin/             # 后台页面
+│   ├── app/               # 控制器 / 模型 / 服务
+│   ├── lib/               # 核心库
+│   └── install/           # 安装 SQL
+└── logs/                  # 运行日志
+```
+
+## 内置主题与插件
+
+**主题：** `default`（示例）、`hopecms`（官方）、`Shop`、`noble`、`reshub`、`cinema` 等
+
+**插件：** `tips`（示例）、`apply`（应用中心）、`oauth`、`migrate`、`music`、`video`、`yuncai` 等
+
+业务扩展请放在 `content/plugin/` 与 `content/theme/`，避免直接修改 `system/` 核心文件。
+
+## 开发文档
+
+完整文档位于 http://www.hopecms.cn/docs.html：
+
+| 文档 | 说明 |
+| --- | --- |
+| [intro.md](http://www.hopecms.cn/docs.html#intro) | 项目简介 |
+| [install.md](http://www.hopecms.cn/docs.html#install) | 安装指南 |
+| [upgrade.md](http://www.hopecms.cn/docs.html#upgrade) | 升级与更新 |
+| [dev.md](http://www.hopecms.cn/docs.html#dev) | 开发准备工作 |
+| [hooks.md](http://www.hopecms.cn/docs.html#hooks) | 挂载点手册 |
+| [plugin.md](http://www.hopecms.cn/docs.html#plugin) | 插件开发指南 |
+| [theme.md](http://www.hopecms.cn/docs.html#theme) | 主题开发指南 |
+| [database.md](http://www.hopecms.cn/docs.html#database) | 数据库与 SQL |
+| [api.md](http://www.hopecms.cn/docs.html#api) | REST API |
+| [rewrite.md](http://www.hopecms.cn/docs.html#rewrite) | 伪静态与路由 |
 
 ## 许可证
 
-本项目基于 Apache License 2.0 进行发布。有关详细信息，请参考仓库中的许可证文件。
+Hope CMS（希望 CMS）核心代码按 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 发布。部分捆绑的第三方库可能采用各自许可证，以其目录内说明为准。
+
+## 相关链接
+
+- 官网：[https://www.hopecms.cn](https://www.hopecms.cn)
+- 演示站：[https://demo.hopecms.cn](https://demo.hopecms.cn)
